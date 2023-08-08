@@ -1,7 +1,61 @@
-body {
-  background-color: rgb(50, 224, 166);
+* {
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #010409;
+  color: white;
+}
+
+div {
+  display: block;
+}
+
+
+/* PROFILE CSS */
+#card-header {
+	padding: 0;
+}
+
+#full-name {
+  font-size: 1.5rem;
+}
+
+#username {
+  font-size: 1.25rem;
+}
+
+.card-title {
+  padding: 1em 0;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+#follow-count {
+  order: 1;
+  margin-top: 0;
+  gap: 0.5em;
+}
+
+#follow-style {
+  margin-bottom: 0.75em;
+}
+
+.follow {
+  white-space: nowrap;
+  text-decoration: none;
+  color: black;
+}
+
+#social-info {
+  list-style: none;
+  padding: 0;
+}
+/* FOOTER CSS */
 li + a {
   color: rgb(69, 69, 182);
 }
