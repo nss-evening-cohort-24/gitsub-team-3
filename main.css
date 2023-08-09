@@ -33,6 +33,6 @@ background: ghostwhite;
 transition: .4s;
 }
 
-.footer-item-text > a {
-  color: white;
+.text-body-secondary {
+  color: rgb(205, 214, 221);
 }
