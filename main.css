@@ -55,6 +55,12 @@ div {
   list-style: none;
   padding: 0;
 }
+
+.h1-sm {
+  font-size: 1.5rem;
+}
+
+
 /* FOOTER CSS */
 li + a {
   color: rgb(69, 69, 182);
