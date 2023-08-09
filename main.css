@@ -34,10 +34,10 @@ transition: .4s;
 }
 
 .text-body-secondary {
-  color: rgb(205, 214, 221);
+  color: rgb(187, 202, 214);
 }
 
-.pinned-repo-form {
+#pinned-repo-form {
   max-width: 50%;
   color:#6c6e72; 
 }
