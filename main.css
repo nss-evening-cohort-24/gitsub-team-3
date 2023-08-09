@@ -1,7 +1,38 @@
 body {
-  background-color: rgb(50, 224, 166);
+  background-color: #010409;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-li + a {
-  color: rgb(69, 69, 182);
+.navbar {
+display: flex;
+justify-content: center; 
+}
+
+.navbar_links {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+list-style: none;
+}
+
+.nav_item > a {
+display: flex;
+padding: 0.5em;
+border-radius: 1em;
+text-decoration: none;
+color: #6c6e72;  
+}
+
+.material-symbols-outlined {
+padding-right: 0.2em;
+}
+
+.nav_item > a.active, .nav_item > a:hover {
+background: ghostwhite;
+transition: .4s;
+}
+
+.footer-item-text > a {
+  color: white;
 }
