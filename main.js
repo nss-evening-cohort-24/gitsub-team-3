@@ -17,3 +17,19 @@ const packageOnDom = (array) => {
   renderToDom("#package-container", domString);
 };
 packageOnDom(packages)
+
+const packageFormOnDom = () => {
+  let domString = "";
+  domString += `<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Create new package</label>
+  <input type="text" class="form-control" id="package-form-name" placeholder="name">
+</div>
+<div class="mb-3">
+  <label for="package-form-description" class="form-label">Description</label>
+  <textarea class="form-control" id="package-form-description" rows="3"></textarea>
+</div>
+<input class="btn btn-primary" type="submit" value="Submit">
+`;
+renderToDom("#package-form",domString)
+};
+packageFormOnDom()
