@@ -1,5 +1,13 @@
+// *********  IMPORTS ********** //
 import { renderToDom } from "./utility/utility.js";
 import { packages } from "./data.js";
+
+// *********  OVERVIEW  ********** //
+const pinnedRepos; 
+
+const pinnedRepoForm; 
+
+// *********  PACKAGES  ********** //
 const packageOnDom = (array) => {
   let domString = "";
   for (const pack of array) {

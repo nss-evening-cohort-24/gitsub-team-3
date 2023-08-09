@@ -36,3 +36,8 @@ transition: .4s;
 .footer-item-text > a {
   color: white;
 }
+
+.pinned-repo-form {
+  max-width: 50%;
+  color:#6c6e72; 
+}
