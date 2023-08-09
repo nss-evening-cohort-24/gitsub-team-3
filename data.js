@@ -140,3 +140,24 @@ export const packages = [
     tags:["theOne","bigGuyCenter","note-taker"]
   },
 ]
+
+export const profile = [
+  {
+    profileImage: "./images-g/profilePic.jpg",
+    name: "Greg",
+    username: "gregGroks13",
+    bio: "lookin for learnin in all the right places :)",
+    followerCount: 14000,
+    followedCount: 23,
+    location: "Nashville, Tn",
+    email: "grokOutWithGreg@yahoo.com",
+    landingPage: "https://gregs-landing-pad.netlify.app/",
+    contributions: [
+      "Wrote some code once",
+      "Made a thing or two",
+      "Had a wild one",
+    ],
+    organizations: ["NSS", "E24", "N2BN"],
+    sponsors: ["ryan", "keana", "nicholas"],
+  },
+];
