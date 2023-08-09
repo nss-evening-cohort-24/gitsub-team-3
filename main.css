@@ -36,3 +36,78 @@ transition: .4s;
 .text-body-secondary {
   color: rgb(205, 214, 221);
 }
+
+/* PROFILE CSS */
+#main-content {
+  margin-top: 0.5em;
+  padding: 0 2em;
+}
+
+.card {
+  background-color: #010409;
+  color: #6c6e72;
+}
+
+#card-header {
+	padding: 0;
+}
+
+#full-name {
+  font-size: 1.5rem;
+}
+
+#username {
+  font-size: 1.25rem;
+}
+
+.card-title {
+  padding: 1em 0;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
+}
+
+#follow-count {
+  order: 1;
+  margin-top: 0;
+  gap: 0.5em;
+}
+
+#follow-style {
+  margin-bottom: 0.75em;
+}
+
+.follow {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #6c6e72;
+}
+
+.follow:hover {
+  color: rgb(42, 42, 219);
+}
+
+#social-info {
+  list-style: none;
+  padding: 0;
+}
+
+.h1-sm {
+  font-size: 1.5rem;
+  margin: 0 0 0.5em 0;
+}
+
+#sponsor {
+  border-top: 1px solid #6c6e72;
+  padding: 0.5em 0 0 0;
+  margin: 0.5em 0 0 0;
+}
+
+#organization {
+  border-top: 1px solid #6c6e72;
+  padding: 0.5em 0 0 0;
+  margin: 0.5em 0 0 0;
+}
