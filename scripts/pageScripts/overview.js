@@ -22,7 +22,7 @@ renderPinnedCards();
 
 // *********  OVERVIEW - FORM ********** //
 const pinnedRepoFormHTML = () => {
-  const domString = `<form><div class="mb-3">
+  const domString = `<form id="overview-form"><div class="mb-3">
   <h2 style="color:white;">Pin Repository</h2>
   <p>Create a Pinned Repository</p>
   <hr>
@@ -50,8 +50,9 @@ const eventListeners = () => {
     description: document.querySelector("#pinnedRepoDesc").value,
     fave: true,
    }
-   repos.push(newFave);  
+   repos.push(newFave);
+   renderPinnedCards();
+   document.querySelector("#overview-form").reset(); 
   })
-  renderPinnedCards();
 }
 eventListeners(); 
