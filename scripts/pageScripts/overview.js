@@ -22,7 +22,7 @@ renderPinnedCards();
 
 // *********  OVERVIEW - FORM ********** //
 const pinnedRepoFormHTML = () => {
-  const domString = `<div class="mb-3">
+  const domString = `<form><div class="mb-3">
   <h2 style="color:white;">Pin Repository</h2>
   <p>Create a Pinned Repository</p>
   <hr>
@@ -33,8 +33,25 @@ const pinnedRepoFormHTML = () => {
   <label for="exampleFormControlTextarea1" class="form-label" style="color:white;">Description</label>
   <textarea class="form-control" id="pinnedRepoDesc" rows="4"></textarea>
   <hr>
-  <button type="button" class="btn btn-success">Pin It!</button>
-  </div>`
+  <button type="submit" class="btn btn-success">Pin It!</button>
+  </div></form>`
   renderToDom("#pinned-repo-form", domString);
 }
 pinnedRepoFormHTML(); 
+
+// *********  OVERVIEW - Event Listeners ********** //
+const eventListeners = () => {
+//Form Submission Event Listener
+  document.querySelector("#pinned-repo-form").addEventListener('submit', (e) => {
+    e.preventDefault(); 
+   const newFave = {
+    id: repos.length + 1,
+    name: document.querySelector("#pinnedRepo").value,
+    description: document.querySelector("#pinnedRepoDesc").value,
+    fave: true,
+   }
+   repos.push(newFave);  
+  })
+  renderPinnedCards();
+}
+eventListeners(); 
