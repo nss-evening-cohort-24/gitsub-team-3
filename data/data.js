@@ -9,7 +9,7 @@ export const repos = [
     "react"
   ],
   fave: true,
-  activity:"images-g/githubActivity.png",
+  activity:"../assets/images/githubActivity.png",
   codebase: "js",
   faveNum: 63,
   branchNum: 42,
@@ -25,7 +25,7 @@ export const repos = [
     "joke.nss"
   ],
   fave: false,
-  activity:"images-g/GHactivity.png",
+  activity:"../assets/images/GHactivity.png",
   codebase: "c++",
   faveNum: 64,
   branchNum: 2,
@@ -41,7 +41,7 @@ export const repos = [
     "no more balloons"
   ],
   fave: true,
-  activity:"images-g/githubActivity.png",
+  activity:"../assets/images/githubActivity.png",
   codebase: "C",
   faveNum: 22,
   branchNum: 94,
@@ -57,7 +57,7 @@ export const repos = [
     "glare"
   ],
   fave: true,
-  activity:"images-g/githubActivity.png",
+  activity:"../assets/images/githubActivity.png",
   codebase: "Java",
   faveNum: 5000,
   branchNum: 9000,
@@ -113,28 +113,28 @@ export const projects = [
 export const packages = [
   {
     id:1,
-    icon: "../images-g/Soft_drink_icon.png",
+    icon: "../assets/images/Soft_drink_icon.png",
     name: "mountainDo" ,
     description:"does the dew" ,
     tags:["beta", "java"]
   },
   {
     id:2,
-    icon: "../images-g/water-drop1.png",
+    icon: "../assets/images/water-drop1.png",
     name: "eve6",
     description:"put the heart in the blender and watches it spin round to a beautiful oblivion" ,
     tags:["react", "C", "C++"]
   },
   {
     id:3,
-    icon: "../images-g/Sabathius-Fire-warning-symbol.png",
+    icon: "../assets/images/Sabathius-Fire-warning-symbol.png",
     name:"formulaFire" ,
     description: "files everything in proper order and then burns it",
     tags:["tailwind","EZ", "search-bar"]
   },
   {
     id:4,
-    icon: "../images-g/man_disguise_glasses.png",
+    icon: "../assets/images/man_disguise_glasses.png",
     name: "GR8googly",
     description: "googles things you wonder about while your walking in the mall alone with your headphones in by itself and saves all the answers in a note document for later",
     tags:["theOne","bigGuyCenter","note-taker"]
@@ -143,15 +143,16 @@ export const packages = [
 
 export const profile = [
   {
-    profileImage: "./images-g/profilePic.jpg",
-    name: "Greg",
+    profileImage: "../assets/images/profilePic.jpg",
+    name: "Greg Markus",
     username: "gregGroks13",
     bio: "lookin for learnin in all the right places :)",
     followerCount: 14000,
     followedCount: 23,
-    location: "Nashville, Tn",
+    location: "Nashville, Tennessee",
     email: "grokOutWithGreg@yahoo.com",
     landingPage: "https://gregs-landing-pad.netlify.app/",
+    socials: "@gregGroks",
     contributions: [
       "Wrote some code once",
       "Made a thing or two",
