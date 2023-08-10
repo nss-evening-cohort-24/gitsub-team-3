@@ -1,6 +1,8 @@
-import { renderToDom } from "./utility/utility.js";
-import { packages } from "./data.js";
-const packageOnDom = (array) => {
+import { packages, profile } from "../../data/data.js";
+import { renderToDom } from "../../utility/renderToDom.js";
+import { profileOnDom } from "../main.js";
+
+export const packageOnDom = (array) => {
   let domString = "";
   for (const pack of array) {
     domString += `
@@ -16,9 +18,9 @@ const packageOnDom = (array) => {
   }
   renderToDom("#package-container", domString);
 };
-packageOnDom(packages)
 
-const packageFormOnDom = () => {
+
+export const packageFormOnDom = () => {
   let domString = "";
   domString += `<div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Create new package</label>
@@ -32,4 +34,7 @@ const packageFormOnDom = () => {
 `;
 renderToDom("#package-form",domString)
 };
-packageFormOnDom()
+
+profileOnDom(profile)
+packageOnDom(packages);
+packageFormOnDom();
