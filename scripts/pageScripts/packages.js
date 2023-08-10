@@ -7,11 +7,10 @@ export const packageOnDom = (array) => {
   for (const pack of array) {
     domString += `
   <div id="package-card" class="card" style="width: 18rem;">
-    <img src="${pack.icon}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">${pack.name}</h5>
+      <h5 class="card-title"><img src="${pack.icon}" class="card-img-top" alt="...">${pack.name}</h5>
       <p class="card-text">${pack.description}</p>
-      <a href="#" class="btn btn-primary">Learn more...</a>
+      <button type="button" class="btn btn-secondary btn-sm">Learn more...</button>
     </div>
   </div>
 `;
@@ -24,7 +23,7 @@ export const packageFormOnDom = () => {
   let domString = "";
   domString += `
   <form id="package-form">
-
+    <h1>Create new package</h1>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Package name</label>
       <input type="text" class="form-control" id="package-name-input" placeholder="Enter name here">

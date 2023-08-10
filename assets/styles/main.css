@@ -116,3 +116,82 @@ transition: .4s;
   padding: 0.5em 0 0 0;
   margin: 0.5em 0 0 0;
 }
+#package-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#package-card {
+  display:flex; 
+  border: 1px solid #6c6e72;
+  margin:  0.625em;
+  padding: 0.3125em;
+  max-width:15em;
+  max-height: 12.3125em;
+}
+
+p.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-height:65px ;
+  font-size: smaller;
+}
+
+#package-card > .card-body > h5 > img {
+  height: 2.1875em;
+  width: 2.1875em;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 0.4375em;
+}
+#package-card > .card-body > h5{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+h5.card-title{
+  padding: 0;
+}
+
+#package-card > .card-body >.btn-sm {
+  background-color: #1e2329;
+  border: 1px solid #6c6e72;
+  color:#cacdd3;
+}
+
+#package-form-container {
+  margin: 0px 0.625em;
+  border-color: #6c6e72;
+}
+
+#package-form > div > input {
+background-color: #010409;
+border-color: #6c6e72;
+}
+
+#package-form > div > textarea {
+  background-color: #010409;
+  border-color: #6c6e72;
+}
+
+#package-form > input {
+  background-color: #010409;
+  border-color: #6c6e72; 
+}
+
+#package-form ::placeholder{
+color: #6c6e72;
+}
+
+#package-form > div > button {
+background-color: #010409;
+border: 1px solid #6c6e72;
+color: #6c6e72;
+margin-top: 0.3125em;
+}
