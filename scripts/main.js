@@ -1,9 +1,9 @@
 import { renderToDom } from "../utility/renderToDom.js";
 
 export const profileOnDom = (array) => {
-  let domString = "";
-  for (const info of array) {
-    domString += `
+  let domString = "";          //TODO: Render icons to Sponsor and Organizations
+  for (const info of array) {  //TODO: Add icons and finish spacing cards out.
+    domString += `             
     <div class="card" style="width: 18.625em;">
       <div id="card-header" class="card-body">
         <img src=${info.profileImage} id="profile-pic" class="card-img-top" alt="User profile picture" width="260" height="260">
@@ -48,7 +48,7 @@ export const profileOnDom = (array) => {
 
 export const footerOnDom = () => {
   let domString = `    
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    <ul class="nav justify-content-center border-top pt-3 mt-3">
       <li class="nav-link px-2 text-body-secondary copyright">2023 GitHub, Inc.</li>
       <li class="nav-item">
         <a href="#" class="nav-link px-2 text-body-secondary footer-item-text">Terms</a>
