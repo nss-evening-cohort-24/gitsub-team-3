@@ -38,8 +38,6 @@ export const packageFormOnDom = () => {
       <label for="exampleFormControlInput1" class="form-label">Icon</label>
       <input type="url" class="form-control" id="package-icon-input" placeholder="Image url">
     </div>
-   
-    <input class="form-control form-control-sm" type="text" placeholder="Tags" aria-label=".form-control-sm example">
 
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
