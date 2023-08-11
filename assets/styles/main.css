@@ -39,11 +39,6 @@ transition: .4s;
   color: rgb(187, 202, 214);
 }
 
-#pinned-repo-form {
-  max-width: 50%;
-  color:#6c6e72; 
-}
-
 /* PROFILE CSS */
 #main-content {
   margin: 0.5em auto 0;
@@ -95,6 +90,22 @@ transition: .4s;
 
 .follow:hover {
   color: rgb(42, 42, 219);
+}
+
+/* Overview Stlying */
+.overview-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;   
+}
+
+.overview-content {
+  width: 45%;
+}
+
+.pinned-repos-container {
+  height: 50%;
+  margin-bottom: 1em; 
 }
 
 /* .card-text {
