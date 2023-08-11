@@ -2,7 +2,7 @@ export const repos = [
 {
   id: 1,
   name: "zoom-updates-randomly",
-  description:"why does it do this all the time randomly constantly?!",
+  description:"Why does it do this all the time randomly constantly?!",
   tags: [
     "random",
     "js",
@@ -18,7 +18,7 @@ export const repos = [
 {
   id: 2,
   name: "improv-goldfish-joke-maker",
-  description:"you can lead a fish to water but is it gonna know how to make a joke?",
+  description:"You can lead a fish to water but is it gonna know how to make a joke?",
   tags: [
     "jokes",
     "react",
@@ -50,14 +50,14 @@ export const repos = [
 {
   id: 4,
   name: "glasses-polisher",
-  description:"it does it for you!",
+  description:"It does it for you!",
   tags: [
     "cleaner",
     "wireframe",
     "glare"
   ],
   fave: true,
-  activity:"../assets/images/githubActivity.png",
+  activity:"../assets/images/GHactivity.png",
   codebase: "Java",
   faveNum: 5000,
   branchNum: 9000,

@@ -1,6 +1,6 @@
 import { packages, profile } from "../../data/data.js";
 import { renderToDom } from "../../utility/renderToDom.js";
-import { profileOnDom } from "../main.js";
+import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 
 export const packageOnDom = (array) => {
   let domString = "";
@@ -67,6 +67,8 @@ packageForm.addEventListener('submit',(e) => {
     packages.push(newPackage)
     packageOnDom(packages)
     packageForm.reset()
-  }
-  )
- profileOnDom(profile)
+  })
+
+navbarOnDom()
+profileOnDom(profile)
+footerOnDom()
