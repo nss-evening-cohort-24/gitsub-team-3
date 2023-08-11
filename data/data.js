@@ -115,30 +115,37 @@ export const packages = [
     id:1,
     icon: "../assets/images/Soft_drink_icon.png",
     name: "mountainDo" ,
-    description:"does the dew" ,
+    description:"Does the do and then the do does it for you while doing everything else you forgot to do" ,
     tags:["beta", "java"]
   },
   {
     id:2,
     icon: "../assets/images/water-drop1.png",
     name: "eve6",
-    description:"put the heart in the blender and watches it spin round to a beautiful oblivion" ,
+    description:"Puts the heart in the blender and watches it spin round to a beautiful oblivion",
     tags:["react", "C", "C++"]
   },
   {
     id:3,
     icon: "../assets/images/Sabathius-Fire-warning-symbol.png",
-    name:"formulaFire" ,
-    description: "files everything in proper order and then burns it",
+    name:"formulaFire",
+    description: "Files everything in proper order and then burns it. dont ask why you're the one who downloaded this package",
     tags:["tailwind","EZ", "search-bar"]
   },
   {
     id:4,
     icon: "../assets/images/man_disguise_glasses.png",
     name: "GR8googly",
-    description: "googles things you wonder about while your walking in the mall alone with your headphones in by itself and saves all the answers in a note document for later",
+    description: "Googles things you wonder about while your walking in the mall alone with your headphones in by itself and saves all the answers in a note document for later",
     tags:["theOne","bigGuyCenter","note-taker"]
   },
+  {
+    id:5,
+    icon: "../assets/images/nofunicon.png",
+    name: "noFunZone",
+    description: "Once you download this package its serious time only. Sorry I dont make the rules and you're the one who downloaded it",
+    tags: ["ez", "noClue", "nope"]
+  }
 ]
 
 export const profile = [
