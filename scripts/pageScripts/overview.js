@@ -1,6 +1,6 @@
 import { profile } from "../../data/data.js";
 import { renderToDom } from "../../utility/renderToDom.js";
-import { profileOnDom } from "../main.js";
+import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
 // *********  OVERVIEW - Cards ********** //
@@ -62,3 +62,7 @@ const startOverview = () => {
   eventListeners();  
 }
 startOverview();
+
+navbarOnDom();
+profileOnDom(profile);
+footerOnDom();
