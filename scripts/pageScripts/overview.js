@@ -5,7 +5,7 @@ import { repos } from "../../data/data.js";
 
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
-  let domString = ``;
+  let domString = `<h5 style="color:white;"> Pinned </h5>`;
   repos
     .filter((repo) => repo.fave)
     .forEach((repo) => {
