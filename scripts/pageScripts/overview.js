@@ -55,6 +55,8 @@ const eventListeners = () => {
       name: document.querySelector("#pinnedRepo").value,
       description: document.querySelector("#pinnedRepoDesc").value,
       fave: true,
+      codebase: `JavaScript`,
+      codebaseColor: "#F0E059",
     };
     repos.push(newFave);
     renderPinnedCards();
