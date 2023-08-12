@@ -5,11 +5,11 @@ import { repos } from "../../data/data.js";
 
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
-  let domString = `<h5 style="color:white;"> Pinned </h5>`;
+  let domString = ``;
   repos
     .filter((repo) => repo.fave)
     .forEach((repo) => {
-      domString += `<div class="card" style="width: 18rem; border-color:grey; margin:0.5em;">
+      domString += `<div class="card" id="pinned-card" style="width: 18rem; border-color:grey; margin:0.5em">
   <div class="card-body">
     <h5 class="card-title"><span class="material-symbols-outlined">book</span><a style="color: #57A6FF">${repo.name}</a></h5>
     <p class="card-text">${repo.description}</p>
