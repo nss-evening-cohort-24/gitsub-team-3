@@ -17,7 +17,7 @@ export const packageOnDom = (array) => {
   }
   renderToDom("#package-container", domString);
 };
-packageOnDom(packages)
+
 
 export const packageFormOnDom = () => {
   let domString = "";
@@ -47,9 +47,9 @@ export const packageFormOnDom = () => {
 `;
   renderToDom("#package-form-container", domString);
 };
-packageFormOnDom()
 
-const packageForm = document.getElementById("package-form")
+
+const packageForm = document.getElementById("package-form-container")
 
 packageForm.addEventListener('submit',(e) => {
   e.preventDefault()  
@@ -66,6 +66,12 @@ packageForm.addEventListener('submit',(e) => {
     packageForm.reset()
   })
 
-navbarOnDom()
-profileOnDom(profile)
-footerOnDom()
+
+const startPackages = () => {
+  packageOnDom(packages)
+  packageFormOnDom()
+  navbarOnDom()
+  profileOnDom(profile)
+  footerOnDom()
+}
+startPackages()

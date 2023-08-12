@@ -193,8 +193,12 @@ repoForm.addEventListener('submit',(e) => {
 
 // TODO: add toggle button for form
 
-navbarOnDom();
-profileOnDom(profile);
-reposOnDom(repos);
-repoFormOnDom();
-footerOnDom();
+const startRepoPage = ( () => {
+  navbarOnDom();
+  profileOnDom(profile);
+  reposOnDom(repos);
+  repoFormOnDom();
+  footerOnDom();
+});
+
+startRepoPage();
