@@ -3,11 +3,11 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-
+// *********  OVERVIEW - Pinned Header HTML ********** //
 const overviewHeader = () => {
-  const headerHTML = `<h5 style="color:white; ">Pinned</h5>`
+  const headerHTML = `<h5 style="color:white; ">Pinned</h5>`;
   renderToDom("#pinned-repos-header", headerHTML);
-}
+};
 
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
@@ -79,6 +79,6 @@ const startOverview = () => {
   navbarOnDom();
   overviewHeader();
   profileOnDom(profile);
-  footerOnDom();  
-}
+  footerOnDom();
+};
 startOverview();
