@@ -465,6 +465,20 @@ input[type="radio"]:checked {
   color:#7D8590;
 }
 
+/* #template-dropdown {
+  appearance: none !important;
+  background: url('../svgs/triangle-down.svg') no-repeat right #21262D;
+  border: 1px solid #e6edf36c;
+  border-radius: 0.25em;
+  color: #C9D1D9 !important;
+  font-size: 0.875em;
+  height: 2.3em;
+  width: max-content !important;
+  padding: 0 0.858em;
+  margin: 0.286em 0 0 0;
+  text-align: center;
+  vertical-align: middle !important;
+} */
 
 /* FOOTER */
 
@@ -481,8 +495,7 @@ input[type="radio"]:checked {
   grid-gap: 1.25em;
 }
 
-#footer {
-  
+#footer {  
   grid-column: span 2;
 }
 
@@ -502,6 +515,8 @@ input[type="radio"]:checked {
   padding: 0.3125em;
   max-width: 15em;
   max-height: 12.3125em;
+  background-color: #0D1117;
+  color: #E6EDF3;
 }
 
 .card-body >.card-text {

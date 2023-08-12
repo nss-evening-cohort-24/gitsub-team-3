@@ -51,16 +51,21 @@ export const repoFormOnDom = () => {
       <p class="required-txt">Required fields are marked with an asterisk (*).</p>
 
       <div class="template-dropdown">
-        <h5>Repository Template</h5>
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-          data-mdb-toggle="dropdown" aria-expanded="false">
-          No Template
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+        <h5>Repository Template</h5>        
+        <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="templateBtn"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            No Template
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
       </div>
@@ -68,7 +73,13 @@ export const repoFormOnDom = () => {
       <div class="owner-dropdown">
         <div class="dropdown">
           <h5 class="owner">Owner*</h5>
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="ownerBtn"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
             Choose an owner
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -167,6 +178,7 @@ export const repoFormOnDom = () => {
   renderToDom("#repo-form", domString)
 }
 
+
 const repoForm = document.getElementById("repo-form")
 
 repoForm.addEventListener('submit',(e) => {
@@ -176,6 +188,7 @@ repoForm.addEventListener('submit',(e) => {
       id: repos.length +1,
       name: document.querySelector('#repo-input').value,
       description: document.querySelector('#repo-description').value,
+      template: document.querySelector("#template-dropdown").value,
       activity: "../../assets/images/githubActivity.png",
       faveNum: 0,
       branchNum: 0,
@@ -186,12 +199,25 @@ repoForm.addEventListener('submit',(e) => {
       branchIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="branch-icon"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>`,
     };
 
+    console.log(newRepository)
+
     repos.push(newRepository)
     reposOnDom(repos)
     repoForm.reset()
   })
 
 // TODO: add toggle button for form
+
+
+document.getElementById("repo-form").addEventListener("click", (e) => {
+  const menu = document.querySelector(".dropdown-menu");
+  if (e.target.id !== "templateBtn") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  } 
+});
+
 
 const startRepoPage = ( () => {
   navbarOnDom();
