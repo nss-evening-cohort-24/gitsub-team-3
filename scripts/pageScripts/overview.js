@@ -3,7 +3,11 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-profileOnDom(profile);
+// *********  OVERVIEW - Pinned Header HTML ********** //
+const overviewHeader = () => {
+  const headerHTML = `<h5 style="color:white; ">Pinned</h5>`;
+  renderToDom("#pinned-repos-header", headerHTML);
+};
 
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
@@ -11,16 +15,23 @@ const renderPinnedCards = () => {
   repos
     .filter((repo) => repo.fave)
     .forEach((repo) => {
-      domString += `<div class="card" id="pinned-card" style="width: 18rem; border-radius:%; border-color:grey; margin:0.5em">
+      domString += `<div class="card" id="pinned-card" style="width: 18rem; border-color:grey; margin:0.5em">
   <div class="card-body">
-    <h5 class="card-title"><span class="material-symbols-outlined">book</span> ${repo.name} </h5>
+    <h5 class="card-title"><span class="material-symbols-outlined">book</span><a style="color: #57A6FF">${repo.name}</a></h5>
     <p class="card-text">${repo.description}</p>
+  <div class="grid-item-4">  
+    <p class="codebase">
+    <svg height="15" width="15">
+      <circle cx="6" cy="6" r="6" fill=${repo.codebaseColor}></circle>
+    </svg>
+    ${repo.codebase}
+  </p>
+  </div>
   </div>
 </div>`;
     });
   renderToDom("#pinned-repos", domString);
 };
-renderPinnedCards();
 
 // *********  OVERVIEW - FORM ********** //
 const pinnedRepoFormHTML = () => {
@@ -37,9 +48,8 @@ const pinnedRepoFormHTML = () => {
   <hr>
   <button type="submit" class="btn btn-success">Pin It!</button>
   </div></form>`;
-  renderToDom("#pinned-repo-form-container", domString);
+  renderToDom("#pinned-repos-form-container", domString);
 };
-pinnedRepoFormHTML();
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
@@ -51,14 +61,24 @@ const eventListeners = () => {
       name: document.querySelector("#pinnedRepo").value,
       description: document.querySelector("#pinnedRepoDesc").value,
       fave: true,
+      codebase: `JavaScript`,
+      codebaseColor: "#F0E059",
     };
     repos.push(newFave);
     renderPinnedCards();
     document.querySelector("#overview-form").reset();
   });
 };
-eventListeners();
 
-navbarOnDom();
-profileOnDom(profile);
-footerOnDom();
+// ********* OVERVIEW - START ********** //
+const startOverview = () => {
+  profileOnDom(profile);
+  renderPinnedCards();
+  pinnedRepoFormHTML();
+  eventListeners();
+  navbarOnDom();
+  overviewHeader();
+  profileOnDom(profile);
+  footerOnDom();
+};
+startOverview();
