@@ -49,7 +49,7 @@ export const packageFormOnDom = () => {
 };
 packageFormOnDom()
 
-const packageForm = document.getElementById("package-form")
+const packageForm = document.getElementById("package-form-container")
 
 packageForm.addEventListener('submit',(e) => {
   e.preventDefault()  

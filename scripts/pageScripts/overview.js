@@ -9,16 +9,19 @@ const renderPinnedCards = () => {
   repos
     .filter((repo) => repo.fave)
     .forEach((repo) => {
-      domString += `<div class="card" style="width: 18rem; border-radius:%; border-color:grey; margin:0.5em">
+      domString += `<div class="card" style="width: 18rem; border-color:grey; margin:0.5em;">
   <div class="card-body">
-    <h5 class="card-title"><span class="material-symbols-outlined">book</span> ${repo.name} </h5>
+    <h5 class="card-title"><span class="material-symbols-outlined">book</span><a style="color: #57A6FF">${repo.name}</a></h5>
     <p class="card-text">${repo.description}</p>
+  <div class="grid-item-4">  
     <p class="codebase">
     <svg height="15" width="15">
       <circle cx="6" cy="6" r="6" fill=${repo.codebaseColor}></circle>
     </svg>
     ${repo.codebase}
   </p>
+  </div>
+  <p class="favorite">${repo.favIcon}${repo.faveNum}</p>
   </div>
 </div>`;
     });
