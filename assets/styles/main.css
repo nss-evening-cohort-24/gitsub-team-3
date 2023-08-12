@@ -574,3 +574,8 @@ h5.card-title {
   color: #6c6e72;
   margin-top: 0.3125em;
 }
+
+#projects-form-container {
+  grid-column: 2 / 3;
+  width: 80%;
+}
