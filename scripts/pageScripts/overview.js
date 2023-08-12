@@ -21,7 +21,6 @@ const renderPinnedCards = () => {
     ${repo.codebase}
   </p>
   </div>
-  <p class="favorite">${repo.favIcon}${repo.faveNum}</p>
   </div>
 </div>`;
     });
@@ -43,7 +42,7 @@ const pinnedRepoFormHTML = () => {
   <hr>
   <button type="submit" class="btn btn-success">Pin It!</button>
   </div></form>`;
-  renderToDom("#pinned-repo-form-container", domString);
+  renderToDom("#pinned-repos-form-container", domString);
 };
 
 // *********  OVERVIEW - Event Listeners ********** //
