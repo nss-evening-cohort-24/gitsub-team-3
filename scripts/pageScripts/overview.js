@@ -3,6 +3,12 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
+
+const overviewHeader = () => {
+  const headerHTML = `<h5 style="color:white; ">Pinned</h5>`
+  renderToDom("#pinned-repos-header", headerHTML);
+}
+
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
   let domString = ``;
@@ -71,6 +77,7 @@ const startOverview = () => {
   pinnedRepoFormHTML();
   eventListeners();
   navbarOnDom();
+  overviewHeader();
   profileOnDom(profile);
   footerOnDom();  
 }
