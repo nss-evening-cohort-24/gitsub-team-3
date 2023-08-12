@@ -17,7 +17,7 @@ export const packageOnDom = (array) => {
   }
   renderToDom("#package-container", domString);
 };
-packageOnDom(packages)
+
 
 export const packageFormOnDom = () => {
   let domString = "";
@@ -38,8 +38,6 @@ export const packageFormOnDom = () => {
       <label for="exampleFormControlInput1" class="form-label">Icon</label>
       <input type="url" class="form-control" id="package-icon-input" placeholder="Image url">
     </div>
-   
-    <input class="form-control form-control-sm" type="text" placeholder="Tags" aria-label=".form-control-sm example">
 
     <div>
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -49,9 +47,9 @@ export const packageFormOnDom = () => {
 `;
   renderToDom("#package-form-container", domString);
 };
-packageFormOnDom()
 
-const packageForm = document.getElementById("package-form")
+
+const packageForm = document.getElementById("package-form-container")
 
 packageForm.addEventListener('submit',(e) => {
   e.preventDefault()  
@@ -68,6 +66,12 @@ packageForm.addEventListener('submit',(e) => {
     packageForm.reset()
   })
 
-navbarOnDom()
-profileOnDom(profile)
-footerOnDom()
+
+const startPackages = () => {
+  packageOnDom(packages)
+  packageFormOnDom()
+  navbarOnDom()
+  profileOnDom(profile)
+  footerOnDom()
+}
+startPackages()

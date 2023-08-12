@@ -127,36 +127,37 @@ export const packages = [
     id:1,
     icon: "../assets/images/Soft_drink_icon.png",
     name: "mountainDo" ,
-    description:"Does the do and then the do does it for you while doing everything else you forgot to do" ,
-    tags:["beta", "java"]
+    description:"Does the do and then the do does it for you while doing everything else you forgot to do"
   },
   {
     id:2,
     icon: "../assets/images/water-drop1.png",
     name: "eve6",
     description:"Puts the heart in the blender and watches it spin round to a beautiful oblivion",
-    tags:["react", "C", "C++"]
   },
   {
     id:3,
     icon: "../assets/images/Sabathius-Fire-warning-symbol.png",
     name:"formulaFire",
-    description: "Files everything in proper order and then burns it. dont ask why you're the one who downloaded this package",
-    tags:["tailwind","EZ", "search-bar"]
+    description: "Files everything in proper order and then burns it. dont ask why you're the one who downloaded this package"
   },
   {
     id:4,
     icon: "../assets/images/man_disguise_glasses.png",
     name: "GR8googly",
-    description: "Googles things you wonder about while your walking in the mall alone with your headphones in by itself and saves all the answers in a note document for later",
-    tags:["theOne","bigGuyCenter","note-taker"]
+    description: "Googles things you wonder about while your walking in the mall alone with your headphones in by itself and saves all the answers in a note document for later"
   },
   {
     id:5,
     icon: "../assets/images/nofunicon.png",
     name: "noFunZone",
-    description: "Once you download this package its serious time only. Sorry I dont make the rules and you're the one who downloaded it",
-    tags: ["ez", "noClue", "nope"]
+    description: "Once you download this package its serious time only. Sorry I dont make the rules and you're the one who downloaded it"
+  },
+  {
+    id:6,
+    icon:"../assets/images/celine DIO.jpg",
+    name:"dionBiz",
+    description: "Near, far, wherever you are I believe that the heart does go on. Once more, you open the door and you're here in my heart and my heart will go on and on"
   }
 ]
 
