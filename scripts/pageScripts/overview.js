@@ -13,6 +13,12 @@ const renderPinnedCards = () => {
   <div class="card-body">
     <h5 class="card-title"><span class="material-symbols-outlined">book</span> ${repo.name} </h5>
     <p class="card-text">${repo.description}</p>
+    <p class="codebase">
+    <svg height="15" width="15">
+      <circle cx="6" cy="6" r="6" fill=${repo.codebaseColor}></circle>
+    </svg>
+    ${repo.codebase}
+  </p>
   </div>
 </div>`;
     });
@@ -59,10 +65,9 @@ const startOverview = () => {
   profileOnDom(profile);
   renderPinnedCards();
   pinnedRepoFormHTML();
-  eventListeners();  
+  eventListeners();
+  navbarOnDom();
+  profileOnDom(profile);
+  footerOnDom();  
 }
 startOverview();
-
-navbarOnDom();
-profileOnDom(profile);
-footerOnDom();
