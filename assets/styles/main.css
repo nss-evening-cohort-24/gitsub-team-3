@@ -18,7 +18,7 @@ body {
   list-style: none;
 }
 
-.nav_item>a {
+.nav_item> a {
   display: flex;
   padding: 0.5em;
   border-radius: 1em;
