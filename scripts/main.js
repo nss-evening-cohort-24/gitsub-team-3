@@ -4,7 +4,7 @@ export const profileOnDom = (array) => {
   let domString = "";          //TODO: Render icons to Sponsor and Organizations
   for (const info of array) {  //TODO: Add icons and finish spacing cards out.
     domString += `             
-    <div class="card" style="width: 18.625em;">
+    <div class="profile-card" style="width: 18.625em;">
       <div id="card-header" class="card-body">
         <img src=${info.profileImage} id="profile-pic" class="card-img-top" alt="User profile picture" width="260" height="260">
         <div class="card-title">

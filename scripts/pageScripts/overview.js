@@ -11,7 +11,7 @@ const renderPinnedCards = () => {
   repos
     .filter((repo) => repo.fave)
     .forEach((repo) => {
-      domString += `<div class="card" style="width: 18rem; border-radius:%; border-color:grey; margin:0.5em">
+      domString += `<div class="card" id="pinned-card" style="width: 18rem; border-radius:%; border-color:grey; margin:0.5em">
   <div class="card-body">
     <h5 class="card-title"><span class="material-symbols-outlined">book</span> ${repo.name} </h5>
     <p class="card-text">${repo.description}</p>
