@@ -3,7 +3,7 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-profileOnDom(profile);
+
 
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
@@ -20,7 +20,7 @@ const renderPinnedCards = () => {
     });
   renderToDom("#pinned-repos", domString);
 };
-renderPinnedCards();
+
 
 // *********  OVERVIEW - FORM ********** //
 const pinnedRepoFormHTML = () => {
@@ -39,7 +39,7 @@ const pinnedRepoFormHTML = () => {
   </div></form>`;
   renderToDom("#pinned-repo-form-container", domString);
 };
-pinnedRepoFormHTML();
+
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
@@ -57,4 +57,13 @@ const eventListeners = () => {
     document.querySelector("#overview-form").reset();
   });
 };
-eventListeners();
+
+// ********* OVERVIEW - START ********** //
+const startOverview = () => {
+  profileOnDom(profile);
+  renderPinnedCards();
+  pinnedRepoFormHTML();
+  eventListeners();  
+}
+
+startOverview();
