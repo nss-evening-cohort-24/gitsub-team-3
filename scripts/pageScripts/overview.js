@@ -3,8 +3,6 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-
-
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
   let domString = ``;
@@ -20,7 +18,6 @@ const renderPinnedCards = () => {
     });
   renderToDom("#pinned-repos", domString);
 };
-
 
 // *********  OVERVIEW - FORM ********** //
 const pinnedRepoFormHTML = () => {
@@ -39,7 +36,6 @@ const pinnedRepoFormHTML = () => {
   </div></form>`;
   renderToDom("#pinned-repo-form-container", domString);
 };
-
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
@@ -65,5 +61,4 @@ const startOverview = () => {
   pinnedRepoFormHTML();
   eventListeners();  
 }
-
 startOverview();
