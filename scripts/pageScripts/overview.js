@@ -9,11 +9,12 @@ const overviewHeader = () => {
   renderToDom("#pinned-repos-header", headerHTML);
 };
 
+// *********  OVERVIEW - Constructing Modal and Pinned Repo Form ********** //
 const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
   domString += `<div class="form-check">
-    <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
+    <input class="form-check-input" type="checkbox" value="${repo.name} id="repo.id" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
     <label class="form-check-label" for="flexCheckChecked"><span class="material-symbols-outlined">book</span> 
       ${repo.name} 
     </label>
@@ -37,13 +38,12 @@ const pinnedRepoModal = () => {
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="background-color:#0D1117;">
-          <form class="modalForm">
+          <form id="modalForm">
           ${modalFormCreator(repos)}
+          <div class="modal-footer" style="background-color:#0D1117;">
+          <button type="submit" class="btn btn-success" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
           </form> 
         </div>
-        <div class="modal-footer" style="background-color:#0D1117;">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success">Save Pins</button>
         </div>
       </div>
     </div>
@@ -111,6 +111,11 @@ const eventListeners = () => {
     repos.push(newFave);
     renderPinnedCards();
     document.querySelector("#overview-form").reset();
+  });
+
+  document.querySelector("#modalForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log('test')
   });
 };
 
