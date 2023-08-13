@@ -44,7 +44,7 @@ const pinnedRepoModal = () => {
           ${modalFormCreator()}
           </div>
           <div class="modal-footer" style="background-color:#0D1117;">
-          <button type="submit" class="btn btn-success" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
+          <button type="submit" class="btn btn-success" data-bs-dismiss="modal" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
           </form> 
         </div>
         </div>
@@ -85,7 +85,6 @@ const eventListeners = () => {
   document.querySelector("#pinnedRepoSearch").addEventListener('keyup', (e) => {
     const userInput = e.target.value.toLowerCase();
     const filteredModal = modalFormCreator(repos.filter((repo) => repo.name.toLowerCase().includes(userInput)));
-    console.log(filteredModal);
     document.querySelector("#pinned-repo-search").innerHTML = filteredModal;
   })
 
