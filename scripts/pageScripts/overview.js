@@ -10,8 +10,8 @@ const modalFormCreator = (array) => {
   array.forEach((repo) => {
   domString += `<div class="form-check">
     <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
-    <label class="form-check-label" for="flexCheckChecked" style="display:flex;"><span class="material-symbols-outlined">book</span> 
-      ${repo.name} 
+    <label class="form-check-label" for="flexCheckChecked" style="display:grid;grid-template-columns:6% 80% 14%"><span class="material-symbols-outlined">book</span> 
+      ${repo.name} <div> ${repo.favIcon} ${repo.faveNum} </div>
     </label>
   </div>`
   })
