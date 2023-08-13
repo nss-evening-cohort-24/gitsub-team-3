@@ -4,16 +4,20 @@
 
 Gitsub is a Github clone created from scratch.
 
-## About the User <!-- This is a scaled down user persona -->
-- The ideal user for this application is a teacher
-- They have students in their classrooms that they would like to put into random groups and they have a love and passion of Harry Potter
-- The problem this app solves for them is it allows them to get their students involved and excited about being in random groups. The students have felt that the groups have not been so random and based on favorites.
+## About the User 
+- The ideal user for this application is a developer
+- They need a place to organize and store code and projects
+- The problem this app solves for the user is it allows a place to store, organize and collaborate with code.
 
-## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
-- When a new student is added an object should be created and that object should be pushed into an array of students that then prints to the DOM.
-- House Colors: The color of the student's card changes depending on which house they were sorted.
-- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
+## Features 
+- This app features 4 different pages that allow organization. These pages are as follows:
+- Overview page: this page has an area for pinned repositories and a form to pin them
+- Repository page: this page has a form for creating repos and then a container for rendering created repos
+- Projects page: this page has a form for creating projects and a container for rendering created repos
+- Packages page: this page has a form for creating packages and a container for rendering created packages
+
+- Each page has a profile rendered on the side, a Nav bar that allows navigation between pages, and a footer.
+
 
 ## Video Walkthrough of Gitsub <!-- A loom link is sufficient -->
 
@@ -22,9 +26,14 @@ Gitsub is a Github clone created from scratch.
 - [Check out the deployed site](#your-link)
 - [Project Board](https://github.com/nss-evening-cohort-24/gitsub-team-3/issues)
 
-## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
+## Project Screenshots 
+- ![Overview Page](image-1.png)
+- ![Repo Page](image-2.png)
+- ![Project Page]()
+- ![Package Page]()
 
 ## Contributors
 - Keana Cobarde [ https://github.com/keanacobarde ]
 - Greg Markus [ https://github.com/GregM1992 ]
 - Ryan Shore [ https://github.com/mshorecode ]
+- Nicholas Davidson [ https://github.com/ndswimming92 ]
