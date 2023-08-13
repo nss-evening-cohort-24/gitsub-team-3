@@ -12,14 +12,20 @@ body {
 }
 
 .dropdown-list {
-  padding: 0.5em 0.5em 0 0.5em;
-  font-size: 1rem;
+  max-height: 20em;
+  overflow-y: auto;
 }
 
-.dropdown-license {
+.dropdown-license .dropdown-list .dropdown-item {
+  white-space: normal;
+}
+
+.dropdown-license, .dropdown-ignore, .dropdown-owner, .dropdown-template {
   border-radius: 1em;
-  height: auto;
   text-align: start;
+  background-color: #161B22;
+  border: 1px solid #6E7681;
+  width: 16.25em;
 }
 
 /* NAVBAR STYLING */
@@ -82,10 +88,15 @@ body {
 
 #full-name {
   font-size: 1.5rem;
+  margin: 0;
+  padding-top: 0.8em;
+  color: #E6EDF3;
 }
 
 #username {
   font-size: 1.25rem;
+  margin-bottom: 0.8em;
+  color: #7D8590;
 }
 
 #profile-pic {
@@ -104,6 +115,7 @@ body {
 #follow-btn {
   border-radius: 0.3125em;
   border: 1px solid #e6edf36b;
+  padding: 5px 16px;
   color: #C9D1D9;
   background-color: #21262D;
 }
@@ -116,6 +128,7 @@ body {
 #sponsor-btn {
   border-radius: 0.3125em;
   border: 1px solid #e6edf36c;
+  padding: 0.3125em 1em;
   color: #C9D1D9;
   background-color: #21262D;
 }
@@ -125,14 +138,18 @@ body {
   border: 1px solid #C9D1D9;
 }
 
+.profile-card-text {
+  padding: 1em 0;
+}
+
 #follow-count {
   order: 1;
   margin-top: 0;
   gap: 0.5em;
 }
 
-#follow-style {
-  margin-bottom: 0.75em;
+.follow-style {
+  padding-bottom: 1em !important;
 }
 
 .follow {
@@ -143,6 +160,27 @@ body {
 
 .follow:hover {
   color: #2F81F7;
+}
+
+.sponsor-profile-pic{
+  height: 2.1875em;
+  width: 2.1875em;
+  border-radius: 50%;
+}
+
+.org-profile-pic {
+  height: 2.1875em;
+  width: 2.1875em;
+}
+
+#fi_1384033 {    /*Twitter Icon */
+  height: 1em;
+  width: 1em
+}
+
+#fi_1384031 {    /*Instagram Icon */
+  height: 1em;
+  width: 1em;
 }
 
 /* Overview Stlying */
@@ -178,21 +216,25 @@ body {
   padding: 0;
 }
 
+#social-info li {
+  padding: 0.25em 0 0 0;
+}
+
 .h1-sm {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0 0 0.5em 0;
 }
 
 #sponsor {
   border-top: 1px solid #E6EDF3;
-  padding: 0.5em 0 0 0;
-  margin: 0.5em 0 0 0;
+  padding: 1em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
 #organization {
   border-top: 1px solid #E6EDF3;
-  padding: 0.5em 0 0 0;
-  margin: 0.5em 0 0 0;
+  padding: 1em 0 0 0;
+  margin: 1em 0 0 0;
 }
 
 /* REPOSITORIES */

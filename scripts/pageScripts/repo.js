@@ -60,14 +60,9 @@ export const repoFormOnDom = () => {
       <div class="template-dropdown">
         <h5>Repository Template</h5>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            No Template
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <select class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <option value="">No Template</option>
+          </select>
         </div>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
@@ -162,7 +157,7 @@ export const repoFormOnDom = () => {
           <ul class="dropdown-license dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
             <div class="license-input">
               <span>License</span>
-              <input type="text" class="owner-input form-control">
+              <input type="text" placeholder="Filter..." class="owner-input form-control">
             </div>
             <div class="dropdown-list">
               <li><span class="dropdown-item">Apache License 2.0</span></li>
@@ -203,7 +198,6 @@ repoForm.addEventListener('submit',(e) => {
       id: repos.length +1,
       name: document.querySelector('#repo-input').value,
       description: document.querySelector('#repo-description').value,
-      template: document.querySelector("#template-dropdown").value,
       activity: "../../assets/images/githubActivity.png",
       faveNum: 0,
       branchNum: 0,
@@ -220,8 +214,6 @@ repoForm.addEventListener('submit',(e) => {
     reposOnDom(repos)
     repoForm.reset()
   })
-
-// TODO: add toggle button for form
 
 const startRepoPage = ( () => {
   navbarOnDom();
