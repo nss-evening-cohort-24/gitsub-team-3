@@ -34,4 +34,3 @@ Gitsub is a Github clone created from scratch.
 - Keana Cobarde [ https://github.com/keanacobarde ]
 - Greg Markus [ https://github.com/GregM1992 ]
 - Ryan Shore [ https://github.com/mshorecode ]
-- Nicholas Davidson [ https://github.com/ndswimming92 ]
