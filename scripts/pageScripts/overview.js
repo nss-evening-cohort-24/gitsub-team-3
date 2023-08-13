@@ -5,7 +5,7 @@ import { repos } from "../../data/data.js";
 
 
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
-const modalFormCreator = (array) => {
+const modalFormCreator = (array = repos) => {
   let domString = ``;
   array.forEach((repo) => {
   domString += `<div class="form-check">
@@ -40,8 +40,8 @@ const pinnedRepoModal = () => {
       </div>
       </div>
           <form id="modalForm">
-          <div style="padding:1em 0 1em 0;">
-          ${modalFormCreator(repos)}
+          <div style="padding:1em 0 1em 0;" id="pinned-repo-search">
+          ${modalFormCreator()}
           </div>
           <div class="modal-footer" style="background-color:#0D1117;">
           <button type="submit" class="btn btn-success" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
@@ -82,7 +82,13 @@ const renderPinnedCards = (array) => {
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
-  // document.querySelector("#pinnedRepoSearch").addEventListener('')
+  document.querySelector("#pinnedRepoSearch").addEventListener('keyup', (e) => {
+    const userInput = e.target.value.toLowerCase();
+    const filteredModal = modalFormCreator(repos.filter((repo) => repo.name.toLowerCase().includes(userInput)));
+    console.log(filteredModal);
+    document.querySelector("#pinned-repo-search").innerHTML = filteredModal;
+  })
+
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
   const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
