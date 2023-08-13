@@ -18,10 +18,17 @@ export const reposOnDom = (array) => {
         <p class="card-text">${repo.description}</p>
       </div>
       <div class="btn-group grid-item-2">
-        <button id="star-btn" class="btn btn-secondary btn-sm h-50  w-50" type="button">
-          ${repo.favIcon}Star
+        <button type="button" id="star-btn" class="btn btn-secondary btn-sm h-50 w-50">${repo.favIcon}Star</button>
+        <button type="button" id="star-btn" class="btn btn-secondary btn-sm grid-item-2 h-50 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
         </button>
-        <button type="button" id="star-btn" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split grid-item-2 h-50" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 30%"></button>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
       </div>
       <div class="grid-item-4">
         <p class="codebase">
@@ -51,22 +58,17 @@ export const repoFormOnDom = () => {
       <p class="required-txt">Required fields are marked with an asterisk (*).</p>
 
       <div class="template-dropdown">
-        <h5>Repository Template</h5>        
-        <button
-            class="btn btn-primary dropdown-toggle"
-            type="button"
-            id="templateBtn"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
+        <h5>Repository Template</h5>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             No Template
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">No Template</a></li>
-            <li><a class="dropdown-item" href="#">codetracker-learning/ASSIGNMENT-intor-js-array-methods</a></li>
-            <li><a class="dropdown-item" href="#">codetracker-learning/LAB-calculator</a></li>
-            <li><a class="dropdown-item" href="#">codetracker-learning/LAB-HTML-Resume</a></li>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
+        </div>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
       </div>
@@ -74,19 +76,13 @@ export const repoFormOnDom = () => {
       <div class="owner-dropdown">
         <div class="dropdown">
           <h5 class="owner">Owner*</h5>
-          <button
-            class="btn btn-primary dropdown-toggle"
-            type="button"
-            id="ownerBtn"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="ownerBtn" data-bs-toggle="dropdown" aria-expanded="false">
             Choose an owner
           </button>
-          <ul class="dropdown-owner" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+            <input type="text" class="owner-input form-control">
+            <li><span class="dropdown-item">gregGroks13</span></li>
+            <li><a class="dropdown-item" href="#">nss-evening-cohort-24</a></li>
           </ul>
         </div>
         <span class="backslash">/</span>
@@ -146,16 +142,10 @@ export const repoFormOnDom = () => {
         <h5 style="font-weight: 600">Add .gitignore</h5>
         <div class="dropdown">
           <div class="ignore-dropdown">       
-            <button
-              class="btn btn-primary dropdown-toggle"
-              type="button"
-              id="ignoreBtn"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="ignoreBtn" data-bs-toggle="dropdown" aria-expanded="false">
               .gitignore template:<span>None</span>
             </button>
-            <ul class="dropdown-ignore" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-ignore dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -166,19 +156,29 @@ export const repoFormOnDom = () => {
 
         <h5 style="font-weight: 600">Choose a license</h5>
         <div class="dropdown">
-          <button 
-          class="btn btn-primary dropdown-toggle license" 
-          type="button" 
-          id="licenseBtn" 
-          data-mdb-toggle="dropdown" 
-          aria-expanded="false"
-          >
+          <button class="btn btn-secondary dropdown-toggle license" type="button" id="licenseBtn" data-bs-toggle="dropdown" aria-expanded="false">
             License:<span>None</span>
           </button>
-          <ul class="dropdown-license" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-license dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+            <div class="license-input">
+              <span>License</span>
+              <input type="text" class="owner-input form-control">
+            </div>
+            <div class="dropdown-list">
+              <li><span class="dropdown-item">Apache License 2.0</span></li>
+              <li><span class="dropdown-item">GNU General Public License</span></li>
+              <li><span class="dropdown-item">MIT License</span></li>
+              <li><span class="dropdown-item">BSD 2-Clause "Simplified" License</span></li>
+              <li><span class="dropdown-item">BSD 3-Clause "New" or "Revised" License</span></li>
+              <li><span class="dropdown-item">Boost Software License 1.0</span></li>
+              <li><span class="dropdown-item">Creative Commons Zero v1.0 Universal</span></li>
+              <li><span class="dropdown-item">Eclipse Public License 2.0</span></li>
+              <li><span class="dropdown-item">GNU Affero General Public License v3.0</span></li>
+              <li><span class="dropdown-item">GNU General Public License v2.0</span></li>
+              <li><span class="dropdown-item">GNU Lesser General Public License v2.1</span></li>
+              <li><span class="dropdown-item">Mozilla Public License 2.0</span></li>
+              <li><span class="dropdown-item">The Unlicense</span></li>
+            </div>
           </ul>
         </div>
         <div class="bottom-border">
@@ -223,56 +223,12 @@ repoForm.addEventListener('submit',(e) => {
 
 // TODO: add toggle button for form
 
-const eventListeners = () => {
-  document.getElementById("templateBtn").addEventListener("click", () => {
-    const templateMenu = document.querySelector(".dropdown-menu");
-  
-    if (templateMenu.style.display === "block") {
-      templateMenu.style.display = "none";
-    } else {
-      templateMenu.style.display = "block";
-    }
-  });
-
-  document.getElementById("ownerBtn").addEventListener("click", () => {
-    const ownerMenu = document.querySelector(".dropdown-owner");
-  
-    if (ownerMenu.style.display === "block") {
-      ownerMenu.style.display = "none";
-    } else {
-      ownerMenu.style.display = "block";
-    }
-  });
-
-  document.getElementById("ignoreBtn").addEventListener("click", () => {
-    const ignoreMenu = document.querySelector(".dropdown-ignore");
-
-    if (ignoreMenu.style.display === "block") {
-      ignoreMenu.style.display = "none";
-    } else {
-      ignoreMenu.style.display = "block";
-    }
-  });
-
-  document.getElementById("licenseBtn").addEventListener("click", () => {
-    const licenseMenu = document.querySelector(".dropdown-license");
-  
-    if (licenseMenu.style.display === "block") {
-      licenseMenu.style.display = "none";
-    } else {
-      licenseMenu.style.display = "block";
-    }
-  });
-}
-
-
 const startRepoPage = ( () => {
   navbarOnDom();
   profileOnDom(profile);
   reposOnDom(repos);
   repoFormOnDom();
   footerOnDom();
-  eventListeners();
 });
 
 startRepoPage();

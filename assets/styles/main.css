@@ -6,8 +6,20 @@ body {
 }
 
 /* DROPDOWN */
-.dropdown-menu, .dropdown-owner, .dropdown-ignore, .dropdown-license {
-  display: none;
+.license-input {
+  padding: 0 0.5em 0.75em 0.5em;
+  border-bottom: 1px solid #6E7681;
+}
+
+.dropdown-list {
+  padding: 0.5em 0.5em 0 0.5em;
+  font-size: 1rem;
+}
+
+.dropdown-license {
+  border-radius: 1em;
+  height: auto;
+  text-align: start;
 }
 
 /* NAVBAR STYLING */
