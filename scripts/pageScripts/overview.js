@@ -34,8 +34,13 @@ const pinnedRepoModal = () => {
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"stlye="--bs-btn-close-color:white;"></button>
         </div>
         <div class="modal-body" style="background-color:#0D1117;">
+        <div id="pinnedRepoSearch" style="display:flex;justify-content:center">
+        <div class="search">
+        <input type="search" id="form1" class="form-control" placeholder="Filter Repositories..." aria-label="Search" />
+      </div>
+      </div>
           <form id="modalForm">
-          <div style="padding:0 0 1em 0;">
+          <div style="padding:1em 0 1em 0;">
           ${modalFormCreator(repos)}
           </div>
           <div class="modal-footer" style="background-color:#0D1117;">
@@ -77,6 +82,7 @@ const renderPinnedCards = (array) => {
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
+  // document.querySelector("#pinnedRepoSearch").addEventListener('')
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
   const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
