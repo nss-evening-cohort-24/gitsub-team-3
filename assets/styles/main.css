@@ -16,11 +16,16 @@ body {
   overflow-y: auto;
 }
 
+.dropdown-list li {
+  border-bottom: 1px solid #6E7681;
+  margin: 0 1em;
+}
+
 .dropdown-license .dropdown-list .dropdown-item {
   white-space: normal;
 }
 
-.dropdown-license, .dropdown-ignore, .dropdown-owner, .dropdown-template {
+.dropdown-license, .dropdown-ignore, .dropdown-owner, .dropdown-template, .dropdown-repo {
   border-radius: 1em;
   text-align: start;
   background-color: #161B22;

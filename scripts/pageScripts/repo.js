@@ -22,12 +22,11 @@ export const reposOnDom = (array) => {
         <button type="button" id="star-btn" class="btn btn-secondary btn-sm grid-item-2 h-50 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
           <span class="visually-hidden">Toggle Dropdown</span>
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end dropdown-repo">
+          <li><a class="dropdown-item" href="#">Future ideas</a></li>
+          <li><a class="dropdown-item" href="#">Personal Projects</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
+          <li><a class="dropdown-item" href="#">&#43; Create list</a></li>
         </ul>
       </div>
       <div class="grid-item-4">
@@ -60,9 +59,13 @@ export const repoFormOnDom = () => {
       <div class="template-dropdown">
         <h5>Repository Template</h5>
         <div class="dropdown">
-          <select class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <option value="">No Template</option>
-          </select>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="templateBtn" data-bs-toggle="dropdown" aria-expanded="false">
+          No Template
+        </button>
+        <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+          <li><span class="dropdown-item">Basic Template</span></li>
+          <li><span class="dropdown-item">Advanced Template</span></li>
+        </ul>
         </div>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
@@ -141,9 +144,9 @@ export const repoFormOnDom = () => {
               .gitignore template:<span>None</span>
             </button>
             <ul class="dropdown-ignore dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">None</a></li>
+              <li><a class="dropdown-item" href="#">AL</a></li>
+              <li><a class="dropdown-item" href="#">Actionscript</a></li>
             </ul>
           </div>
         </div>
