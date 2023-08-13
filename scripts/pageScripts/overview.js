@@ -14,7 +14,7 @@ const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
   domString += `<div class="form-check">
-    <input class="form-check-input" type="checkbox" value="${repo.name} id="repo.id" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
+    <input class="form-check-input" type="checkbox" value="${repo.name}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
     <label class="form-check-label" for="flexCheckChecked"><span class="material-symbols-outlined">book</span> 
       ${repo.name} 
     </label>
@@ -115,7 +115,15 @@ const eventListeners = () => {
 
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log('test')
+   const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
+   const checkedRepos = [];
+   console.log(getCheckedBoxes);
+   getCheckedBoxes.forEach((node) => {
+    if (node.checked) {
+      checkedRepos.push(node.value); 
+    }
+   })
+   console.log(checkedRepos); 
   });
 };
 
