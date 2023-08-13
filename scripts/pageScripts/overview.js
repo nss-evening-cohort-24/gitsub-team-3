@@ -3,20 +3,21 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
 const modalFormCreator = (array = repos) => {
   let domString = ``;
   array.forEach((repo) => {
-  domString += `<div class="form-check">
-    <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
+    domString += `<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="${
+      repo.id
+    }" id="flexCheckChecked" ${repo.fave ? "checked" : ""}>
     <label class="form-check-label" for="flexCheckChecked" style="display:grid;grid-template-columns:6% 80% 14%"><span class="material-symbols-outlined">book</span> 
       ${repo.name} <div> ${repo.favIcon} ${repo.faveNum} </div>
     </label>
-  </div>`
-  })
-  return domString; 
-} 
+  </div>`;
+  });
+  return domString;
+};
 
 const pinnedRepoModal = () => {
   const domString = `<div style="display:flex;align-items:flex-end;"><h5 style="color:white;">Pinned</h5></div>
@@ -50,19 +51,18 @@ const pinnedRepoModal = () => {
         </div>
       </div>
     </div>
-  </div>`
-renderToDom("#pinned-repos-header", domString); 
-}
-pinnedRepoModal(); 
-
+  </div>`;
+  renderToDom("#pinned-repos-header", domString);
+};
+pinnedRepoModal();
 
 // *********  OVERVIEW - Cards ********** //
-const alreadyFaveArr = repos.filter((repo) => repo.fave); 
+const alreadyFaveArr = repos.filter((repo) => repo.fave);
 
 const renderPinnedCards = (array) => {
   let domString = ``;
- array.forEach((repo) => {
-      domString += `<div class="card" id="pinned-card" style="width: 18rem; border-color:grey; margin:0.5em">
+  array.forEach((repo) => {
+    domString += `<div class="card" id="pinned-card" style="width: 18rem; border-color:grey; margin:0.5em">
   <div class="card-body">
     <h5 class="card-title"><span class="material-symbols-outlined">book</span><a style="color: #57A6FF">${repo.name}</a></h5>
     <p class="card-text">${repo.description}</p>
@@ -76,36 +76,44 @@ const renderPinnedCards = (array) => {
   </div>
   </div>
 </div>`;
-    });
+  });
   renderToDom("#pinned-repos", domString);
 };
 
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
-  document.querySelector("#pinnedRepoSearch").addEventListener('keyup', (e) => {
+  //Search function within the modal. Filters out repos. 
+  document.querySelector("#pinnedRepoSearch").addEventListener("keyup", (e) => {
     const userInput = e.target.value.toLowerCase();
-    const filteredModal = modalFormCreator(repos.filter((repo) => repo.name.toLowerCase().includes(userInput)));
+    const filteredModal = modalFormCreator(
+      repos.filter((repo) => repo.name.toLowerCase().includes(userInput))
+    );
     document.querySelector("#pinned-repo-search").innerHTML = filteredModal;
-  })
+  });
 
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
-  const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
-  const checkedRepos = [];
-  const indexes = []; 
-  let reposToRender = []; 
-  getCheckedBoxes.forEach((node) => {
-   if (node.checked) {
-     checkedRepos.push(node.value); 
-   }
-  })
-  for (let i = 0; i < checkedRepos.length; i++) {
-   indexes.push(repos.findIndex((repo) => checkedRepos[i] == repo.id));
- }
-  indexes.forEach((index) => reposToRender.push(repos[index])); 
- renderPinnedCards(reposToRender);
-});
-}
+    //finds all elements that take a checkbox input and puts them into a node
+    const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
+    //creating empty arrays to organize the node 
+    const checkedRepos = []; //the value, which is the name of a checked repo, goes here 
+    const indexes = []; //indexes on the repo array of the checked repos go here 
+    let reposToRender = []; //final array that contains the repos to be rendered
+    //checkes for the value of the checkboxes that ARE checked 
+    getCheckedBoxes.forEach((node) => {
+      if (node.checked) {
+        checkedRepos.push(node.value);
+      }
+    });
+    //finds the indexes of those values in respect to the repos array
+    for (let i = 0; i < checkedRepos.length; i++) {
+      indexes.push(repos.findIndex((repo) => checkedRepos[i] == repo.id));
+    }
+    //renders the repos within the array to the dom
+    indexes.forEach((index) => reposToRender.push(repos[index]));
+    renderPinnedCards(reposToRender);
+  });
+};
 
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
