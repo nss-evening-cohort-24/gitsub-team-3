@@ -4,7 +4,7 @@ import { renderToDom } from "../../utility/renderToDom.js";
 
 export const projectsOnDom = (array) => {
   let domString = `
-    <div class="search">
+    <div class="proj-search">
       <input type="search" id="form1" class="form-control" placeholder="Search all projects..." aria-label="Search" />
     </div>
   `;
@@ -12,7 +12,7 @@ export const projectsOnDom = (array) => {
     domString += `
     <div class="proj-card w-150 h-25">
       <div class="proj-card-body grid-item-1">
-        <h5 class="card-title">
+        <h5 class="form-card-title">
           <a style="color: #57A6FF">${proj.name}</a>
         </h5>
         <p class="card-text">${proj.description}</p>
