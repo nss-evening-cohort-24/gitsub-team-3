@@ -3,13 +3,8 @@ import { renderToDom } from "../../utility/renderToDom.js";
 import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
-// *********  OVERVIEW - Pinned Header HTML ********** //
-const overviewHeader = () => {
-  const headerHTML = `<h5 style="color:white; ">Pinned</h5>`;
-  renderToDom("#pinned-repos-header", headerHTML);
-};
 
-// *********  OVERVIEW - Constructing Modal and Pinned Repo Form ********** //
+// *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
 const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -24,10 +19,11 @@ const modalFormCreator = (array) => {
 } 
 
 const pinnedRepoModal = () => {
-  const domString = `<!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  const domString = `<h5 style="color:white;">Pinned</h5>
+  <!-- Button trigger modal -->
+  <div style="display:flex;justify-content:end;"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="align-text:right;">
     Customize Your Pins
-  </button>
+  </button></div>
   
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -77,42 +73,8 @@ const renderPinnedCards = (array) => {
   renderToDom("#pinned-repos", domString);
 };
 
-// *********  OVERVIEW - FORM ********** //
-const pinnedRepoFormHTML = () => {
-  const domString = `<form id="overview-form"><div class="mb-3">
-  <h2 style="color:white;">Pin a Repository</h2>
-  <p>Create a Pinned Repository</p>
-  <hr>
-  <label for="exampleFormControlInput1" class="form-label" style="color:white;">Repository Name</label>
-  <input type="text" class="form-control" id="pinnedRepo" style="background-color:black;border-color:#6c6e72">
-  </div>
-  <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label" style="color:white;">Description</label>
-  <textarea class="form-control" id="pinnedRepoDesc" rows="4" style="background-color:black;border-color:#6c6e72"></textarea>
-  <hr>
-  <button type="submit" class="btn btn-success">Pin It!</button>
-  </div></form>`;
-  renderToDom("#pinned-repos-form-container", domString);
-};
-
 // *********  OVERVIEW - Event Listeners ********** //
 const eventListeners = () => {
-  //Form Submission Event Listener
-  document.querySelector("#overview-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const newFave = {
-      id: repos.length + 1,
-      name: document.querySelector("#pinnedRepo").value,
-      description: document.querySelector("#pinnedRepoDesc").value,
-      fave: true,
-      codebase: `JavaScript`,
-      codebaseColor: "#F0E059",
-    };
-    repos.push(newFave);
-    renderPinnedCards();
-    document.querySelector("#overview-form").reset();
-  });
-
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
   const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
@@ -136,10 +98,8 @@ const eventListeners = () => {
 const startOverview = () => {
   profileOnDom(profile);
   renderPinnedCards(alreadyFaveArr);
-  pinnedRepoFormHTML();
   eventListeners();
   navbarOnDom();
-  // overviewHeader();
   profileOnDom(profile);
   footerOnDom();
 };
