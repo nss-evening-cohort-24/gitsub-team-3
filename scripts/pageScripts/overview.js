@@ -19,9 +19,9 @@ const modalFormCreator = (array) => {
 } 
 
 const pinnedRepoModal = () => {
-  const domString = `<h5 style="color:white;">Pinned</h5>
+  const domString = `<div style="display:flex;align-items:flex-end;"><h5 style="color:white;">Pinned</h5></div>
   <!-- Button trigger modal -->
-  <div style="display:flex;justify-content:end;"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="align-text:right;">
+  <div style="display:flex;justify-content:end;"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="align-text:right;margin-bottom:.5rem">
     Customize Your Pins
   </button></div>
   
