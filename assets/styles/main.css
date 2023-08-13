@@ -197,13 +197,14 @@ body {
 
 .aboutMe {
   display: grid;
-  height: 50%;
-  grid-template-rows: 10% 30% 60%;
+  height: auto;
+  grid-template-rows: 5% 25% 70%;
   margin-bottom: 0.5em;
   border-color: #e6edf36b;
   border-style: solid;
   border-radius: 1em;
   border-width: 0.1em;
+  font-size: small;
 }
 
 .aboutme-header-img {
