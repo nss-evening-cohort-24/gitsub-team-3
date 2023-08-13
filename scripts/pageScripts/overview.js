@@ -10,7 +10,7 @@ const modalFormCreator = (array) => {
   array.forEach((repo) => {
   domString += `<div class="form-check">
     <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
-    <label class="form-check-label" for="flexCheckChecked"><span class="material-symbols-outlined">book</span> 
+    <label class="form-check-label" for="flexCheckChecked" style="display:flex;"><span class="material-symbols-outlined">book</span> 
       ${repo.name} 
     </label>
   </div>`
@@ -31,11 +31,13 @@ const pinnedRepoModal = () => {
       <div class="modal-content">
         <div class="modal-header" style="background-color:#0D1117;">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Pinned Repositories</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"stlye="--bs-btn-close-color:white;"></button>
         </div>
         <div class="modal-body" style="background-color:#0D1117;">
           <form id="modalForm">
+          <div style="padding:0 0 1em 0;">
           ${modalFormCreator(repos)}
+          </div>
           <div class="modal-footer" style="background-color:#0D1117;">
           <button type="submit" class="btn btn-success" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
           </form> 
