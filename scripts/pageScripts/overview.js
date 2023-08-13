@@ -9,6 +9,50 @@ const overviewHeader = () => {
   renderToDom("#pinned-repos-header", headerHTML);
 };
 
+const modalFormCreator = (array) => {
+  let domString = ``;
+  array.forEach((repo) => {
+  domString += `<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
+    <label class="form-check-label" for="flexCheckChecked"><span class="material-symbols-outlined">book</span> 
+      ${repo.name} 
+    </label>
+  </div>`
+  })
+  return domString; 
+} 
+
+const pinnedRepoModal = () => {
+  const domString = `<!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Customize Your Pins
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#0D1117;">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Pinned Repositories</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="background-color:#0D1117;">
+          <form class="modalForm">
+          ${modalFormCreator(repos)}
+          </form> 
+        </div>
+        <div class="modal-footer" style="background-color:#0D1117;">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save Pins</button>
+        </div>
+      </div>
+    </div>
+  </div>`
+renderToDom("#pinned-repos-header", domString); 
+}
+pinnedRepoModal(); 
+
+
 // *********  OVERVIEW - Cards ********** //
 const renderPinnedCards = () => {
   let domString = ``;
@@ -77,7 +121,7 @@ const startOverview = () => {
   pinnedRepoFormHTML();
   eventListeners();
   navbarOnDom();
-  overviewHeader();
+  // overviewHeader();
   profileOnDom(profile);
   footerOnDom();
 };
