@@ -6,8 +6,10 @@ import { repos } from "../../data/data.js";
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
 
 const aboutMe = () => {
-
+let domString = 
+renderToDom(".aboutMe", domString);
 }
+// aboutMe();
 
 const modalFormCreator = (array = repos) => {
   let domString = ``;
