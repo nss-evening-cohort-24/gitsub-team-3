@@ -575,7 +575,15 @@ h5.card-title {
   margin-top: 0.3125em;
 }
 
+.proj-card {
+  border-top: 2px solid #21272C;
+  margin-top: 1em;
+  padding: 1em;
+}
+
 #projects-form-container {
   grid-column: 2 / 3;
   width: 80%;
+  border: 1px solid;
+  padding: 1em;
 }
