@@ -135,14 +135,14 @@ body {
   justify-content: center;   
 }
 
+#pinned-repos-header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 .overview-content {
   width: 100%;
 }
-
-#overview-form {
-  width: 80%;
-}
-
 
 #pinned-card {
   background-color: #0D1117;
