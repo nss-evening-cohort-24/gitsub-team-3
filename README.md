@@ -1,4 +1,5 @@
-# Gitsub  
+# Gitsub
+
 <!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys) -->
 <!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
@@ -21,8 +22,10 @@ Gitsub is a Github clone created from scratch.
 
 ## Video Walkthrough of Gitsub <!-- A loom link is sufficient -->
 
+- Nicholas Davidson Loom - https://www.loom.com/share/6ef5db283505413da3371b57342a279c?sid=9617ce5c-513d-4be3-aad4-2ae044f8b3c5
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+
 - [Check out the deployed site](#your-link)
 - [Project Board](https://github.com/nss-evening-cohort-24/gitsub-team-3/issues)
 
@@ -33,6 +36,7 @@ Gitsub is a Github clone created from scratch.
 - ![Package Page]()
 
 ## Contributors
+
 - Keana Cobarde [ https://github.com/keanacobarde ]
 - Greg Markus [ https://github.com/GregM1992 ]
 - Ryan Shore [ https://github.com/mshorecode ]
