@@ -125,11 +125,10 @@ const eventListeners = () => {
 
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
-  profileOnDom(profile);
-  renderPinnedCards(alreadyFaveArr);
-  eventListeners();
   navbarOnDom();
+  renderPinnedCards(alreadyFaveArr);
   profileOnDom(profile);
   footerOnDom();
+  eventListeners();
 };
 startOverview();

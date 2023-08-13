@@ -18,10 +18,16 @@ export const reposOnDom = (array) => {
         <p class="card-text">${repo.description}</p>
       </div>
       <div class="btn-group grid-item-2">
-        <button id="star-btn" class="btn btn-secondary btn-sm h-50  w-50" type="button">
-          ${repo.favIcon}Star
+        <button type="button" id="star-btn" class="btn btn-secondary btn-sm h-50 w-50">${repo.favIcon}Star</button>
+        <button type="button" id="star-btn" class="btn btn-secondary btn-sm grid-item-2 h-50 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
         </button>
-        <button type="button" id="star-btn" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split grid-item-2 h-50" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 30%"></button>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end dropdown-repo">
+          <li><a class="dropdown-item" href="#">Future ideas</a></li>
+          <li><a class="dropdown-item" href="#">Personal Projects</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">&#43; Create list</a></li>
+        </ul>
       </div>
       <div class="grid-item-4">
         <p class="codebase">
@@ -52,15 +58,15 @@ export const repoFormOnDom = () => {
 
       <div class="template-dropdown">
         <h5>Repository Template</h5>
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-          data-mdb-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="templateBtn" data-bs-toggle="dropdown" aria-expanded="false">
           No Template
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+          <li><span class="dropdown-item">Basic Template</span></li>
+          <li><span class="dropdown-item">Advanced Template</span></li>
         </ul>
+        </div>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
       </div>
@@ -68,13 +74,13 @@ export const repoFormOnDom = () => {
       <div class="owner-dropdown">
         <div class="dropdown">
           <h5 class="owner">Owner*</h5>
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="ownerBtn" data-bs-toggle="dropdown" aria-expanded="false">
             Choose an owner
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+            <input type="text" class="owner-input form-control">
+            <li><span class="dropdown-item">gregGroks13</span></li>
+            <li><a class="dropdown-item" href="#">nss-evening-cohort-24</a></li>
           </ul>
         </div>
         <span class="backslash">/</span>
@@ -133,26 +139,44 @@ export const repoFormOnDom = () => {
         
         <h5 style="font-weight: 600">Add .gitignore</h5>
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle gitignore" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-            .gitignore template:<span>None</span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <div class="ignore-dropdown">       
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="ignoreBtn" data-bs-toggle="dropdown" aria-expanded="false">
+              .gitignore template:<span>None</span>
+            </button>
+            <ul class="dropdown-ignore dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">None</a></li>
+              <li><a class="dropdown-item" href="#">AL</a></li>
+              <li><a class="dropdown-item" href="#">Actionscript</a></li>
+            </ul>
+          </div>
         </div>
         <p class="ignore">Choose which files not to track from a list of templates. <a href="#" >Learn more about ignoring files.</a></p>
 
         <h5 style="font-weight: 600">Choose a license</h5>
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle license" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle license" type="button" id="licenseBtn" data-bs-toggle="dropdown" aria-expanded="false">
             License:<span>None</span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-license dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+            <div class="license-input">
+              <span>License</span>
+              <input type="text" placeholder="Filter..." class="owner-input form-control">
+            </div>
+            <div class="dropdown-list">
+              <li><span class="dropdown-item">Apache License 2.0</span></li>
+              <li><span class="dropdown-item">GNU General Public License</span></li>
+              <li><span class="dropdown-item">MIT License</span></li>
+              <li><span class="dropdown-item">BSD 2-Clause "Simplified" License</span></li>
+              <li><span class="dropdown-item">BSD 3-Clause "New" or "Revised" License</span></li>
+              <li><span class="dropdown-item">Boost Software License 1.0</span></li>
+              <li><span class="dropdown-item">Creative Commons Zero v1.0 Universal</span></li>
+              <li><span class="dropdown-item">Eclipse Public License 2.0</span></li>
+              <li><span class="dropdown-item">GNU Affero General Public License v3.0</span></li>
+              <li><span class="dropdown-item">GNU General Public License v2.0</span></li>
+              <li><span class="dropdown-item">GNU Lesser General Public License v2.1</span></li>
+              <li><span class="dropdown-item">Mozilla Public License 2.0</span></li>
+              <li><span class="dropdown-item">The Unlicense</span></li>
+            </div>
           </ul>
         </div>
         <div class="bottom-border">
@@ -166,6 +190,7 @@ export const repoFormOnDom = () => {
   `;
   renderToDom("#repo-form", domString)
 }
+
 
 const repoForm = document.getElementById("repo-form")
 
@@ -186,12 +211,12 @@ repoForm.addEventListener('submit',(e) => {
       branchIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="branch-icon"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>`,
     };
 
+    console.log(newRepository)
+
     repos.push(newRepository)
     reposOnDom(repos)
     repoForm.reset()
   })
-
-// TODO: add toggle button for form
 
 const startRepoPage = ( () => {
   navbarOnDom();
