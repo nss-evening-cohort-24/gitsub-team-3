@@ -4,6 +4,11 @@ import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
+
+const aboutMe = () => {
+
+}
+
 const modalFormCreator = (array = repos) => {
   let domString = ``;
   array.forEach((repo) => {
@@ -89,6 +94,7 @@ const eventListeners = () => {
       repos.filter((repo) => repo.name.toLowerCase().includes(userInput))
     );
     document.querySelector("#pinned-repo-search").innerHTML = filteredModal;
+    document.querySelector("#pinned-repo-search").reset(); 
   });
 
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
