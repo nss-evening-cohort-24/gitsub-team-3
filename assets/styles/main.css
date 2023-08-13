@@ -196,13 +196,18 @@ body {
 }
 
 .aboutMe {
-  display: flex;
+  display: grid;
   height: 50%;
+  grid-template-rows: 10% 30% 60%;
   margin-bottom: 0.5em;
   border-color: #e6edf36b;
   border-style: solid;
   border-radius: 1em;
   border-width: 0.1em;
+}
+
+.aboutme-header-img {
+  margin: 0.1rem;
 }
 
 #pinned-repos-header {
