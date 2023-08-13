@@ -62,9 +62,10 @@ export const repoFormOnDom = () => {
             No Template
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">No Template</a></li>
+            <li><a class="dropdown-item" href="#">codetracker-learning/ASSIGNMENT-intor-js-array-methods</a></li>
+            <li><a class="dropdown-item" href="#">codetracker-learning/LAB-calculator</a></li>
+            <li><a class="dropdown-item" href="#">codetracker-learning/LAB-HTML-Resume</a></li>
           </ul>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
@@ -82,7 +83,7 @@ export const repoFormOnDom = () => {
           >
             Choose an owner
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-owner" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -144,23 +145,37 @@ export const repoFormOnDom = () => {
         
         <h5 style="font-weight: 600">Add .gitignore</h5>
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle gitignore" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
-            .gitignore template:<span>None</span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <div class="ignore-dropdown">       
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="ignoreBtn"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              .gitignore template:<span>None</span>
+            </button>
+            <ul class="dropdown-ignore" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
         </div>
         <p class="ignore">Choose which files not to track from a list of templates. <a href="#" >Learn more about ignoring files.</a></p>
 
         <h5 style="font-weight: 600">Choose a license</h5>
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle license" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+          <button 
+          class="btn btn-primary dropdown-toggle license" 
+          type="button" 
+          id="licenseBtn" 
+          data-mdb-toggle="dropdown" 
+          aria-expanded="false"
+          >
             License:<span>None</span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-license" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -208,15 +223,47 @@ repoForm.addEventListener('submit',(e) => {
 
 // TODO: add toggle button for form
 
+const eventListeners = () => {
+  document.getElementById("templateBtn").addEventListener("click", () => {
+    const templateMenu = document.querySelector(".dropdown-menu");
+  
+    if (templateMenu.style.display === "block") {
+      templateMenu.style.display = "none";
+    } else {
+      templateMenu.style.display = "block";
+    }
+  });
 
-document.getElementById("repo-form").addEventListener("click", (e) => {
-  const menu = document.querySelector(".dropdown-menu");
-  if (e.target.id !== "templateBtn") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  } 
-});
+  document.getElementById("ownerBtn").addEventListener("click", () => {
+    const ownerMenu = document.querySelector(".dropdown-owner");
+  
+    if (ownerMenu.style.display === "block") {
+      ownerMenu.style.display = "none";
+    } else {
+      ownerMenu.style.display = "block";
+    }
+  });
+
+  document.getElementById("ignoreBtn").addEventListener("click", () => {
+    const ignoreMenu = document.querySelector(".dropdown-ignore");
+
+    if (ignoreMenu.style.display === "block") {
+      ignoreMenu.style.display = "none";
+    } else {
+      ignoreMenu.style.display = "block";
+    }
+  });
+
+  document.getElementById("licenseBtn").addEventListener("click", () => {
+    const licenseMenu = document.querySelector(".dropdown-license");
+  
+    if (licenseMenu.style.display === "block") {
+      licenseMenu.style.display = "none";
+    } else {
+      licenseMenu.style.display = "block";
+    }
+  });
+}
 
 
 const startRepoPage = ( () => {
@@ -225,6 +272,7 @@ const startRepoPage = ( () => {
   reposOnDom(repos);
   repoFormOnDom();
   footerOnDom();
+  eventListeners();
 });
 
 startRepoPage();

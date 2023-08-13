@@ -72,13 +72,12 @@ const eventListeners = () => {
 
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
+  navbarOnDom();                  //profileOnDom was being rendered two times and moved eventListeners to the bottom of startOverview()
+  overviewHeader();               // I was getting render errors when trying to run the site. 
   profileOnDom(profile);
   renderPinnedCards();
   pinnedRepoFormHTML();
-  eventListeners();
-  navbarOnDom();
-  overviewHeader();
-  profileOnDom(profile);
   footerOnDom();
+  eventListeners();
 };
 startOverview();
