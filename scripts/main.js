@@ -15,30 +15,38 @@ export const profileOnDom = (array) => {
       <div id="main-body">
         <div id="btn-container">
           <button id="follow-btn">Follow</button>
-          <button id="sponsor-btn">Sponsor</button>
+          <button id="sponsor-btn">${info.sponsorIcon} Sponsor</button>
         </div>
-        <div class="card-text">${info.bio}</div>
+        <div class="profile-card-text">${info.bio}</div>
         <div id="follow-count">
           <div class="follow-style">
+            ${info.followerIcon}
             <a href="#" class="follow">${info.followerCount} followers</a>
+            <span>&#183;</span>
             <a href="#" class="follow">${info.followedCount} following</a>
           </div>
         </div>
         <ul id="social-info">
-          <li>${info.location}</li>
-          <li>${info.email}</li>
-          <li>${info.landingPage}</li>
-          <li>${info.socials}</li>
-          <li>${info.socials}</li>
+          <li>${info.locationIcon}&nbsp; ${info.location}</li>
+          <li>${info.emailIcon}&nbsp; ${info.email}</li>
+          <li>${info.linkIcon}&nbsp; ${info.landingPage}</li>
+          <li>${info.twitterIcon}&nbsp; ${info.socials}</li>
+          <li>${info.instagramIcon}&nbsp; ${info.socials}</li>
         </ul>
       </div>
       <div id="sponsor">
         <h1 class="h1-sm">Sponsors</h1>
-        <div id="sponsor-profile-pic"></div>
+        <div id="sponsor-profile-pic">
+          <img src=${info.sponsors} class="sponsor-profile-pic">
+          <img src=${info.sponsors[1]} class="sponsor-profile-pic">
+          <img src=${info.sponsors[2]} class="sponsor-profile-pic">
+        </div>
       </div>
       <div id="organization">
         <h1 class="h1-sm">Organizations</h1>
-        <div id="org-profile-pic"></div>
+        <div id="org-profile-pic">
+          <img src=${info.organizations} class="org-profile-pic">
+        </div>
       </div>
     </div>
     `;
