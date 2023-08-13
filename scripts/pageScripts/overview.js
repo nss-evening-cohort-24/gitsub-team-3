@@ -14,7 +14,7 @@ const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
   domString += `<div class="form-check">
-    <input class="form-check-input" type="checkbox" value="${repo.name}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
+    <input class="form-check-input" type="checkbox" value="${repo.id}" id="flexCheckChecked" ${repo.fave ? 'checked': ''}>
     <label class="form-check-label" for="flexCheckChecked"><span class="material-symbols-outlined">book</span> 
       ${repo.name} 
     </label>
@@ -54,11 +54,11 @@ pinnedRepoModal();
 
 
 // *********  OVERVIEW - Cards ********** //
-const renderPinnedCards = () => {
+const alreadyFaveArr = repos.filter((repo) => repo.fave); 
+
+const renderPinnedCards = (array) => {
   let domString = ``;
-  repos
-    .filter((repo) => repo.fave)
-    .forEach((repo) => {
+ array.forEach((repo) => {
       domString += `<div class="card" id="pinned-card" style="width: 18rem; border-color:grey; margin:0.5em">
   <div class="card-body">
     <h5 class="card-title"><span class="material-symbols-outlined">book</span><a style="color: #57A6FF">${repo.name}</a></h5>
@@ -115,22 +115,27 @@ const eventListeners = () => {
 
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
     e.preventDefault();
-   const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
-   const checkedRepos = [];
-   console.log(getCheckedBoxes);
-   getCheckedBoxes.forEach((node) => {
-    if (node.checked) {
-      checkedRepos.push(node.value); 
-    }
-   })
-   console.log(checkedRepos); 
-  });
-};
+  const getCheckedBoxes = document.querySelectorAll('input[type="checkbox"]');
+  const checkedRepos = [];
+  const indexes = []; 
+  let reposToRender = []; 
+  getCheckedBoxes.forEach((node) => {
+   if (node.checked) {
+     checkedRepos.push(node.value); 
+   }
+  })
+  for (let i = 0; i < checkedRepos.length; i++) {
+   indexes.push(repos.findIndex((repo) => checkedRepos[i] == repo.id));
+ }
+  indexes.forEach((index) => reposToRender.push(repos[index])); 
+ renderPinnedCards(reposToRender);
+});
+}
 
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
   profileOnDom(profile);
-  renderPinnedCards();
+  renderPinnedCards(alreadyFaveArr);
   pinnedRepoFormHTML();
   eventListeners();
   navbarOnDom();
