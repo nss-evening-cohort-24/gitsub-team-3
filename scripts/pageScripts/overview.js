@@ -4,7 +4,41 @@ import { footerOnDom, navbarOnDom, profileOnDom } from "../main.js";
 import { repos } from "../../data/data.js";
 
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
-const modalFormCreator = (array = repos) => {
+
+const aboutMe = () => {
+const domString = `<div style="font-family:'Courier New'; margin: 0.7rem 0 0 0.5rem;"><h6 style="display:flex;"><span class="material-symbols-outlined">
+stadia_controller
+</span>gregGroks13/greg.md</h6>
+<h1>👋 Hi, I'm Greg...</h1>
+<hr>
+</div>
+<div class="aboutme-header-img">
+<img class="aboutme-header-img" style="margin: 1rem;" src="assets/images/github-header-image.png">
+</div>
+<div style="font-family:'Courier New';padding:0.5rem;"><p>
+As a software engineer, I bring a unique blend of capabilities to the digital realm. Here's what I'm all about:
+Problem-Solving Wizardry 🧙‍♂️<br><br>
+
+Got a complex challenge? I thrive on breaking down problems into bite-sized pieces and crafting elegant solutions. My algorithmic prowess helps me navigate through the maze of logic to find the optimal path.
+Multilingual Maestro 💬<br><br>
+
+Whether it's Python, JavaScript, Java, or even the nuances of SQL, I'm fluent in a multitude of programming languages. I love conversing with code and turning abstract ideas into functional systems.
+End-to-End Enlightenment 🌐<br><br>
+
+From the front-end dazzle to the back-end stability, I've got your software's entire journey covered. Crafting user-friendly interfaces is my jam, and optimizing databases is my delight.
+Learning at Lightspeed 🌟<br><br>
+
+The tech world evolves faster than lightspeed travel, but that's where I thrive. I adapt to new technologies, frameworks, and tools like a digital chameleon, ensuring that your software stays at the cutting edge.
+Collaborative Cohort 🤝<br><br>
+
+Teamwork makes the code work! I seamlessly integrate into development teams, communicating ideas, sharing insights, and contributing effectively to ensure the collective success of projects.
+Let's Code the Future! ⏩<br><br>
+
+Whether you need a quick bug fix or a comprehensive software solution, I'm here to assist. Let's collaborate and create digital marvels that redefine the boundaries of possibility!</p></div>`
+renderToDom(".aboutMe", domString); 
+}
+
+const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
     domString += `<div class="form-check">
@@ -42,7 +76,7 @@ const pinnedRepoModal = () => {
       </div>
           <form id="modalForm">
           <div style="padding:1em 0 1em 0;" id="pinned-repo-search">
-          ${modalFormCreator()}
+          ${modalFormCreator(repos)}
           </div>
           <div class="modal-footer" style="background-color:#0D1117;">
           <button type="submit" class="btn btn-success" data-bs-dismiss="modal" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
@@ -54,7 +88,7 @@ const pinnedRepoModal = () => {
   </div>`;
   renderToDom("#pinned-repos-header", domString);
 };
-pinnedRepoModal();
+
 
 // *********  OVERVIEW - Cards ********** //
 const alreadyFaveArr = repos.filter((repo) => repo.fave);
@@ -89,6 +123,7 @@ const eventListeners = () => {
       repos.filter((repo) => repo.name.toLowerCase().includes(userInput))
     );
     document.querySelector("#pinned-repo-search").innerHTML = filteredModal;
+    document.querySelector("#pinned-repo-search").reset(); 
   });
 
   document.querySelector("#modalForm").addEventListener("submit", (e) => {
@@ -117,9 +152,11 @@ const eventListeners = () => {
 
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
-  navbarOnDom();
-  renderPinnedCards(alreadyFaveArr);
   profileOnDom(profile);
+  aboutMe();
+  pinnedRepoModal();
+  renderPinnedCards(alreadyFaveArr);
+  navbarOnDom();
   footerOnDom();
   eventListeners();
 };

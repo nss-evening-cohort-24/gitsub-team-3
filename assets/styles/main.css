@@ -200,6 +200,22 @@ body {
   justify-content: center;   
 }
 
+.aboutMe {
+  display: grid;
+  height: auto;
+  grid-template-rows: 15% 30% 70%;
+  margin-bottom: 0.5em;
+  border-color: #e6edf36b;
+  border-style: solid;
+  border-radius: 1em;
+  border-width: 0.1em;
+  font-size: small;
+}
+
+.aboutme-header-img {
+  margin: 0.1rem;
+}
+
 #pinned-repos-header {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -217,6 +233,7 @@ body {
 
 .pinned-repos-container {
   margin-bottom: 1em;
+  padding-bottom: 0.5em;
   display: flex;
   flex-wrap: wrap;
 }
