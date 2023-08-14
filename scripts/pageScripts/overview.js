@@ -13,7 +13,7 @@ const domString = `<div style="font-family:'Courier New'; margin: 0.7rem 0 0 0.5
 <div class="aboutme-header-img">
 <img class="aboutme-header-img" style="margin: 1rem;" src="assets/images/github-header-image.png">
 </div>
-<div style="font-family:'Courier New';overflow-y:scroll;padding:0.5rem;"><p>
+<div style="font-family:'Courier New';padding:0.5rem;"><p>
 As a software engineer, I bring a unique blend of capabilities to the digital realm. Here's what I'm all about:
 Problem-Solving Wizardry 🧙‍♂️<br><br>
 
@@ -35,7 +35,7 @@ Let's Code the Future! ⏩<br><br>
 Whether you need a quick bug fix or a comprehensive software solution, I'm here to assist. Let's collaborate and create digital marvels that redefine the boundaries of possibility!</p></div>`
 renderToDom(".aboutMe", domString); 
 }
-aboutMe();
+
 
 const modalFormCreator = (array = repos) => {
   let domString = ``;
@@ -152,6 +152,7 @@ const eventListeners = () => {
 // ********* OVERVIEW - START ********** //
 const startOverview = () => {
   profileOnDom(profile);
+  aboutMe();
   renderPinnedCards(alreadyFaveArr);
   eventListeners();
   navbarOnDom();
