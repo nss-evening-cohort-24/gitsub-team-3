@@ -13,9 +13,11 @@ export const reposOnDom = (array) => {
     <div class="repo-card w-100 h-25">
       <div class="repo-card-body grid-item-1">
         <h5 class="card-title">
-          <a style="color: #57A6FF">${repo.name}</a>
+          <a style="color: #57A6FF">${repo.name}</a> 
         </h5>
+        <span id="owned"><b>Owned By:</b> ${repo.owner} <b>|</b> <b>Template Used:</b> ${repo.template}</span>         
         <p class="card-text">${repo.description}</p>
+
       </div>
       <div class="btn-group grid-item-2">
         <button type="button" id="star-btn" class="btn btn-secondary btn-sm h-50 w-50">${repo.favIcon}Star</button>
@@ -56,16 +58,14 @@ export const repoFormOnDom = () => {
       <p class="blurb">A repository contains all project files, including the revision history. Already have a project repository elsewhere? <a href="#">Import a repository.</a></p>
       <p class="required-txt">Required fields are marked with an asterisk (*).</p>
 
-      <div class="template-dropdown">
+      <div id="template-dropdown">
         <h5>Repository Template</h5>
         <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="templateBtn" data-bs-toggle="dropdown" aria-expanded="false">
-          No Template
-        </button>
-        <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-          <li><span class="dropdown-item">Basic Template</span></li>
-          <li><span class="dropdown-item">Advanced Template</span></li>
-        </ul>
+        <select class="btn btn-secondary dropdown-toggle" id="templateBtn">
+          <option id="template" class="dropdown-item" value="No Template">No Template</option>
+          <option id="template" class="dropdown-item" value="Basic Template">Basic Template</option>
+          <option id="template" class="dropdown-item" value="Advanced Template">Advanced Template</option>
+        </select>
         </div>
         <br>
         <span class="span-1">Start your repository with a template repository's contents.</span>
@@ -74,14 +74,11 @@ export const repoFormOnDom = () => {
       <div class="owner-dropdown">
         <div class="dropdown">
           <h5 class="owner">Owner*</h5>
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="ownerBtn" data-bs-toggle="dropdown" aria-expanded="false">
-            Choose an owner
-          </button>
-          <ul class="dropdown-owner dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-            <input type="text" class="owner-input form-control">
-            <li><span class="dropdown-item">gregGroks13</span></li>
-            <li><a class="dropdown-item" href="#">nss-evening-cohort-24</a></li>
-          </ul>
+          <select class="btn btn-secondary dropdown-toggle" id="ownerBtn">
+            <option class="dropdown-item" value="">Choose an owner</option>
+            <option class="dropdown-item" value="gregGroks13">gregGroks13</option>
+            <option class="dropdown-item" value="nss-evening-cohort-24">nss-evening-cohort-24</option>
+          </select>
         </div>
         <span class="backslash">/</span>
         <div class="form-outline">
@@ -144,9 +141,9 @@ export const repoFormOnDom = () => {
               .gitignore template:<span>None</span>
             </button>
             <ul class="dropdown-ignore dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">None</a></li>
-              <li><a class="dropdown-item" href="#">AL</a></li>
-              <li><a class="dropdown-item" href="#">Actionscript</a></li>
+              <li><a class="dropdown-item" data-value="None">None</a></li>
+              <li><a class="dropdown-item" data-value="AL">AL</a></li>
+              <li><a class="dropdown-item" data-value="Actionscript">Actionscript</a></li>
             </ul>
           </div>
         </div>
@@ -163,19 +160,19 @@ export const repoFormOnDom = () => {
               <input type="text" placeholder="Filter..." class="owner-input form-control">
             </div>
             <div class="dropdown-list">
-              <li><span class="dropdown-item">Apache License 2.0</span></li>
-              <li><span class="dropdown-item">GNU General Public License</span></li>
-              <li><span class="dropdown-item">MIT License</span></li>
-              <li><span class="dropdown-item">BSD 2-Clause "Simplified" License</span></li>
-              <li><span class="dropdown-item">BSD 3-Clause "New" or "Revised" License</span></li>
-              <li><span class="dropdown-item">Boost Software License 1.0</span></li>
-              <li><span class="dropdown-item">Creative Commons Zero v1.0 Universal</span></li>
-              <li><span class="dropdown-item">Eclipse Public License 2.0</span></li>
-              <li><span class="dropdown-item">GNU Affero General Public License v3.0</span></li>
-              <li><span class="dropdown-item">GNU General Public License v2.0</span></li>
-              <li><span class="dropdown-item">GNU Lesser General Public License v2.1</span></li>
-              <li><span class="dropdown-item">Mozilla Public License 2.0</span></li>
-              <li><span class="dropdown-item">The Unlicense</span></li>
+              <li><a class="dropdown-item" data-value="Apache License 2.0">Apache License 2.0</a></li>
+              <li><a class="dropdown-item" data-value="GNU General Public License">GNU General Public License</a></li>
+              <li><a class="dropdown-item" data-value="MIT License">MIT License</a></li>
+              <li><a class="dropdown-item" data-value="BSD 2-Clause "Simplified" License">BSD 2-Clause "Simplified" License</a></li>
+              <li><a class="dropdown-item" data-value="BSD 3-Clause "New" or "Revised" License">BSD 3-Clause "New" or "Revised" License</a></li>
+              <li><a class="dropdown-item" data-value="Boost Software License 1.0">Boost Software License 1.0</a></li>
+              <li><a class="dropdown-item" data-value="Creative Commons Zero v1.0 Universal">Creative Commons Zero v1.0 Universal</a></li>
+              <li><a class="dropdown-item" data-value="Eclipse Public License 2.0">Eclipse Public License 2.0</a></li>
+              <li><a class="dropdown-item" data-value="GNU Affero General Public License v3.0">GNU Affero General Public License v3.0</a></li>
+              <li><a class="dropdown-item" data-value="GNU General Public License v2.0">GNU General Public License v2.0</a></li>
+              <li><a class="dropdown-item" data-value="GNU Lesser General Public License v2.1">GNU Lesser General Public License v2.1</a></li>
+              <li><a class="dropdown-item" data-value="Mozilla Public License 2.0">Mozilla Public License 2.0</a></li>
+              <li><a class="dropdown-item" data-value="The Unlicense">The Unlicense</a></li>
             </div>
           </ul>
         </div>
@@ -191,32 +188,32 @@ export const repoFormOnDom = () => {
   renderToDom("#repo-form", domString)
 }
 
-
 const repoForm = document.getElementById("repo-form")
 
 repoForm.addEventListener('submit',(e) => {
-  e.preventDefault()  
+  e.preventDefault()
 
-    const newRepository = {
-      id: repos.length +1,
-      name: document.querySelector('#repo-input').value,
-      description: document.querySelector('#repo-description').value,
-      activity: "../../assets/images/githubActivity.png",
-      faveNum: 0,
-      branchNum: 0,
-      updatedLast: "seconds ago",
-      codebase: "Javascript",
-      codebaseColor: "#F0E059",
-      favIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="star"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>`,
-      branchIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="branch-icon"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>`,
-    };
+  const newRepository = {
+    id: repos.length +1,
+    name: document.querySelector('#repo-input').value,
+    owner: document.getElementById('ownerBtn').value,
+    template: document.getElementById('templateBtn').value,
+    description: document.querySelector('#repo-description').value,
+    activity: "../../assets/images/githubActivity.png",
+    faveNum: 0,
+    branchNum: 0,
+    updatedLast: "0 seconds ago",
+    codebase: "Javascript",
+    codebaseColor: "#F0E059",
+    favIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="star"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>`,
+    branchIcon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="15" height="15" class="branch-icon"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.493 2.493 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25Zm-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Zm8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg>`,
+  };
 
-    console.log(newRepository)
-
-    repos.push(newRepository)
-    reposOnDom(repos)
-    repoForm.reset()
-  })
+  console.log(newRepository)
+  repos.push(newRepository)
+  reposOnDom(repos)
+  repoForm.reset()
+})
 
 const startRepoPage = ( () => {
   navbarOnDom();
