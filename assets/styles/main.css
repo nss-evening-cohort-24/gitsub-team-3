@@ -198,7 +198,7 @@ body {
 .aboutMe {
   display: grid;
   height: auto;
-  grid-template-rows: 10% 30% 70%;
+  grid-template-rows: 15% 30% 70%;
   margin-bottom: 0.5em;
   border-color: #e6edf36b;
   border-style: solid;
