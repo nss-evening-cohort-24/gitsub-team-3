@@ -156,9 +156,8 @@ const startOverview = () => {
   aboutMe();
   pinnedRepoModal();
   renderPinnedCards(alreadyFaveArr);
-  eventListeners();
   navbarOnDom();
-  profileOnDom(profile);
   footerOnDom();
+  eventListeners();
 };
 startOverview();
