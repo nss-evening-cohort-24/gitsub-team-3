@@ -23,6 +23,9 @@ Gitsub is a Github clone created from scratch.
 ## Video Walkthrough of Gitsub <!-- A loom link is sufficient -->
 
 - Nicholas Davidson Loom - https://www.loom.com/share/6ef5db283505413da3371b57342a279c?sid=9617ce5c-513d-4be3-aad4-2ae044f8b3c5
+- Keana Cobarde Loom - https://www.loom.com/share/b959b5ec3bef43ee9073770a24acfc1e?sid=f4398e09-9959-47b7-ae8d-edb08e41c6ea
+- Gregory Markus Loom - https://www.loom.com/share/95737965ff82485fbe88f0c85563158f?sid=ae445dad-67bc-42d5-bb82-9e225a591916
+- Ryan Shore Loom - https://www.loom.com/share/b973007f1b124a22a59fcfe05754b76c?sid=f601a189-355f-4c1a-bc17-473d9a684e7f
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 
@@ -32,8 +35,8 @@ Gitsub is a Github clone created from scratch.
 ## Project Screenshots 
 - ![Overview Page](image-1.png)
 - ![Repo Page](image-2.png)
-- ![Project Page]()
-- ![Package Page]()
+- ![Project Page](image-3.png)
+- ![Package Page](image-4.png)
 
 ## Contributors
 
