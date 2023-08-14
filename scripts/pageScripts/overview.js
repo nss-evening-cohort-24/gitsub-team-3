@@ -6,7 +6,9 @@ import { repos } from "../../data/data.js";
 // *********  OVERVIEW - Constructing Header, Modal, and Pinned Repo Form ********** //
 
 const aboutMe = () => {
-const domString = `<div style="font-family:'Courier New'; margin: 0.7rem 0 0 0.5rem;"><h6>gregGroks13/greg.md</h6>
+const domString = `<div style="font-family:'Courier New'; margin: 0.7rem 0 0 0.5rem;"><h6 style="display:flex;"><span class="material-symbols-outlined">
+stadia_controller
+</span>gregGroks13/greg.md</h6>
 <h1>👋 Hi, I'm Greg...</h1>
 <hr>
 </div>
@@ -36,8 +38,7 @@ Whether you need a quick bug fix or a comprehensive software solution, I'm here 
 renderToDom(".aboutMe", domString); 
 }
 
-
-const modalFormCreator = (array = repos) => {
+const modalFormCreator = (array) => {
   let domString = ``;
   array.forEach((repo) => {
     domString += `<div class="form-check">
@@ -75,7 +76,7 @@ const pinnedRepoModal = () => {
       </div>
           <form id="modalForm">
           <div style="padding:1em 0 1em 0;" id="pinned-repo-search">
-          ${modalFormCreator()}
+          ${modalFormCreator(repos)}
           </div>
           <div class="modal-footer" style="background-color:#0D1117;">
           <button type="submit" class="btn btn-success" data-bs-dismiss="modal" style="background-color:#198754;color:#C9D1D9">Save Pins</button>
@@ -87,7 +88,7 @@ const pinnedRepoModal = () => {
   </div>`;
   renderToDom("#pinned-repos-header", domString);
 };
-pinnedRepoModal();
+
 
 // *********  OVERVIEW - Cards ********** //
 const alreadyFaveArr = repos.filter((repo) => repo.fave);
@@ -153,6 +154,7 @@ const eventListeners = () => {
 const startOverview = () => {
   profileOnDom(profile);
   aboutMe();
+  pinnedRepoModal();
   renderPinnedCards(alreadyFaveArr);
   eventListeners();
   navbarOnDom();
