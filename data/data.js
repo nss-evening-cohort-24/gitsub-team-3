@@ -9,6 +9,8 @@ export const repos = [
     "react"
   ],
   fave: true,
+  owner: 'gregGroks13',
+  template: 'Basic Template',
   activity:"../assets/images/githubActivity.png",
   codebase: "Javascript",
   codebaseColor: "#F0E059",
@@ -28,6 +30,8 @@ export const repos = [
     "joke.nss"
   ],
   fave: false,
+  owner: 'gregGroks13',
+  template: 'Basic Template',
   activity:"../assets/images/GHactivity.png",
   codebase: "C++",
   codebaseColor: "#F34B7D",
@@ -47,6 +51,8 @@ export const repos = [
     "no more balloons"
   ],
   fave: true,
+  owner: 'gregGroks13',
+  template: 'Basic Template',
   activity:"../assets/images/githubActivity.png",
   codebase: "HTML",
   codebaseColor: "#E34B26",
@@ -66,6 +72,8 @@ export const repos = [
     "glare"
   ],
   fave: true,
+  owner: 'gregGroks13',
+  template: 'Basic Template',
   activity:"../assets/images/GHactivity.png",
   codebase: "Javascript",
   codebaseColor: "#F0E059",
